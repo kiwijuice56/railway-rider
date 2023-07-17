@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://main/actor/Actor.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/actor/state_machine/state/player_idle.gd" type="Script" id=2]
+[ext_resource path="res://main/actor/player/ninja.png" type="Texture" id=3]
+[ext_resource path="res://main/actor/player/player.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 6, 9 )
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 1 ]
+}
+
+[node name="Player" instance=ExtResource( 1 )]
+script = ExtResource( 4 )
+
+[node name="StateMachine" parent="." index="0"]
+controller_path = NodePath("..")
+initial_state_name = "PlayerIdle"
+
+[node name="PlayerIdle" type="Node" parent="StateMachine" index="0"]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="Sprite" parent="." index="2"]
+position = Vector2( 0, 0.5 )
+texture = ExtResource( 3 )
+hframes = 7
+
+[node name="AnimationPlayer" parent="." index="3"]
+playback_speed = 1.5
+anims/RESET = SubResource( 2 )
+anims/idle = SubResource( 3 )
