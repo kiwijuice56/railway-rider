@@ -16,11 +16,13 @@ func _process(_delta: float) -> void:
 	lane = int(clamp(lane, -1, 1))
 	
 	if old_lane != lane and not $Tween.is_active():
-		switch_lane()
+		switch_lane(old_lane)
 	else:
 		lane = old_lane
 
-func switch_lane() -> void:
+func switch_lane(old_lane: int) -> void:
+	$AnimationPlayer.play("turn_left" if old_lane > lane else "turn_right")
+	
 	$Tween.interpolate_property($Train, "translation:x", null, 
 	lane_offset * lane, switch_time,
 	Tween.TRANS_QUAD, Tween.EASE_OUT)

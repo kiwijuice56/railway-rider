@@ -1,7 +1,52 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://main/player/player.gd" type="Script" id=1]
 [ext_resource path="res://main/player/train/Train.tscn" type="PackedScene" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Train:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "turn_left"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Train:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 24 ), Vector3( 0, 0, 28 ), Vector3( 0, 0, -4 ), Vector3( 0, 0, 2 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "turn_right"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Train:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -24 ), Vector3( 0, 0, -28 ), Vector3( 0, 0, 4 ), Vector3( 0, 0, -2 ), Vector3( 0, 0, 0 ) ]
+}
 
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
@@ -12,11 +57,17 @@ lane_offset = 3.0
 [node name="Train" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.216, 0 )
 
-[node name="top view" type="Camera" parent="."]
+[node name="TopView" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, -0.0475422, 0.998869, 0, -0.998869, -0.0475422, 0, 75.5833, 0.277679 )
 visible = false
 current = true
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.920505, 0.390731, 0, -0.390731, 0.920505, 0, 5, 4.2 )
+transform = Transform( 1, 0, 0, 0, 0.953722, 0.300689, 0, -0.300689, 0.953722, 0, 4.439, 4.967 )
 current = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.5
+anims/RESET = SubResource( 1 )
+anims/turn_left = SubResource( 2 )
+anims/turn_right = SubResource( 3 )
