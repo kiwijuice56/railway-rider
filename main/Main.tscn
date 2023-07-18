@@ -1,8 +1,30 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
+
+[sub_resource type="ProceduralSky" id=1]
+sky_top_color = Color( 0.270588, 0.709804, 0.952941, 1 )
+sky_horizon_color = Color( 0.823529, 0.890196, 0.941176, 1 )
+sky_energy = 1.1
+ground_bottom_color = Color( 0.360784, 0.572549, 0.203922, 1 )
+ground_horizon_color = Color( 0.435294, 0.752941, 0.619608, 1 )
+sun_color = Color( 1, 0.964706, 0.854902, 1 )
+sun_latitude = 18.64
+sun_longitude = 28.64
+sun_angle_min = 1.37
+sun_energy = 1.07
+
+[sub_resource type="Environment" id=2]
+background_mode = 2
+background_sky = SubResource( 1 )
+background_sky_orientation = Basis( 1, 0, 0, 0, 0.999124, 0.0418582, 0, -0.0418582, 0.999124 )
+dof_blur_far_enabled = true
+dof_blur_far_distance = 32.0
+dof_blur_far_transition = 32.0
+dof_blur_far_amount = 0.06
+glow_enabled = true
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -20,3 +42,6 @@ light_energy = 1.844
 stream = ExtResource( 3 )
 volume_db = -14.0
 autoplay = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 2 )
