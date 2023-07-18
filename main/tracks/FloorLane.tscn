@@ -1,5 +1,6 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://main/level/FloorLaneModel.dae" type="PackedScene" id=1]
+[ext_resource path="res://main/tracks/FloorLaneModel.dae" type="PackedScene" id=1]
+
 
 [node name="FloorLane" instance=ExtResource( 1 )]

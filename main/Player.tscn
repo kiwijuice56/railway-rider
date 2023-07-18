@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main/player/player.gd" type="Script" id=1]
+[ext_resource path="res://main/player/train/Train.tscn" type="PackedScene" id=2]
+
+[node name="Player" type="Spatial"]
+script = ExtResource( 1 )
+lane_offset = 3.0
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Train" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.216, 0 )
+
+[node name="top view" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -0.0475422, 0.998869, 0, -0.998869, -0.0475422, 0, 75.5833, 0.277679 )
+visible = false
+current = true
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.920505, 0.390731, 0, -0.390731, 0.920505, 0, 5, 4.2 )
+current = true
