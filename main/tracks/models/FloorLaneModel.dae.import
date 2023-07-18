@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/FloorLaneModel.dae-2ba2acc07c7ca58c4fda74abc7eb85e7.scn"
+path="res://.import/FloorLaneModel.dae-d0b23186dc2e278b7c99980621124e63.scn"
 
 [deps]
 
-source_file="res://main/tracks/FloorLaneModel.dae"
-dest_files=[ "res://.import/FloorLaneModel.dae-2ba2acc07c7ca58c4fda74abc7eb85e7.scn" ]
+source_file="res://main/tracks/models/FloorLaneModel.dae"
+dest_files=[ "res://.import/FloorLaneModel.dae-d0b23186dc2e278b7c99980621124e63.scn" ]
 
 [params]
 

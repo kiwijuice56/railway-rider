@@ -36,6 +36,7 @@ GlobalState="*res://main/global_state.gd"
 
 [debug]
 
+settings/stdout/print_fps=true
 gdscript/warnings/unused_signal=false
 
 [display]

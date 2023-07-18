@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://main/tracks/FloorLane.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/tracks/models/FloorLane.tscn" type="PackedScene" id=1]
 
-[node name="Basic Tracks" type="Spatial"]
+[node name="Basic" type="Spatial"]
 
 [node name="FloorLane" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.24445 )
