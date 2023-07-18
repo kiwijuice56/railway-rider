@@ -9,43 +9,19 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "KinematicBody2D",
-"class": "Actor",
-"language": "GDScript",
-"path": "res://main/actor/actor.gd"
-}, {
 "base": "Node",
 "class": "Main",
 "language": "GDScript",
 "path": "res://main/main.gd"
 }, {
-"base": "Actor",
+"base": "Spatial",
 "class": "Player",
 "language": "GDScript",
-"path": "res://main/actor/player/player.gd"
-}, {
-"base": "State",
-"class": "PlayerIdle",
-"language": "GDScript",
-"path": "res://main/actor/state_machine/state/player_idle.gd"
-}, {
-"base": "Node",
-"class": "State",
-"language": "GDScript",
-"path": "res://main/actor/state_machine/state/state.gd"
-}, {
-"base": "Node",
-"class": "StateMachine",
-"language": "GDScript",
-"path": "res://main/actor/state_machine/state_machine.gd"
+"path": "res://main/player/player.gd"
 } ]
 _global_script_class_icons={
-"Actor": "",
 "Main": "",
-"Player": "",
-"PlayerIdle": "",
-"State": "",
-"StateMachine": ""
+"Player": ""
 }
 
 [application]
@@ -97,6 +73,19 @@ texture={
 "svg/scale": 1.0
 }
 
+[input]
+
+move_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777231,"unicode":0,"echo":false,"script":null)
+ ]
+}
+move_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":0,"physical_scancode":16777233,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
 [layer_names]
 
 2d_physics/layer_1="actor"
@@ -113,5 +102,4 @@ quality/driver/driver_name="GLES2"
 2d/snapping/use_gpu_pixel_snap=true
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
-environment/default_clear_color=Color( 1, 1, 1, 1 )
 environment/default_environment="res://default_env.tres"
