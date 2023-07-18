@@ -21,6 +21,10 @@ func _process(_delta: float) -> void:
 		lane = old_lane
 
 func switch_lane(old_lane: int) -> void:
+	$SwooshPlayer.pitch_scale = rand_range(0.8, 1.1)
+	$ImpactPlayer.pitch_scale = rand_range(0.8, 1.1)
+	
+	$AnimationPlayer.stop()
 	$AnimationPlayer.play("turn_left" if old_lane > lane else "turn_right")
 	
 	$Tween.interpolate_property($Train, "translation:x", null, 

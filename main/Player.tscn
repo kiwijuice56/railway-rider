@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://main/player/player.gd" type="Script" id=1]
 [ext_resource path="res://main/player/train/Train.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/player/sounds/swoosh.wav" type="AudioStream" id=3]
+[ext_resource path="res://main/player/sounds/impact.wav" type="AudioStream" id=4]
+[ext_resource path="res://main/player/sounds/train.mp3" type="AudioStream" id=5]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -16,6 +19,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SwooshPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ImpactPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=2]
@@ -32,6 +59,30 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 24 ), Vector3( 0, 0, 28 ), Vector3( 0, 0, -4 ), Vector3( 0, 0, 2 ), Vector3( 0, 0, 0 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("SwooshPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ImpactPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [sub_resource type="Animation" id=3]
 resource_name = "turn_right"
@@ -46,6 +97,30 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -24 ), Vector3( 0, 0, -28 ), Vector3( 0, 0, 4 ), Vector3( 0, 0, -2 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SwooshPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ImpactPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.6 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 
 [node name="Player" type="Spatial"]
@@ -71,3 +146,16 @@ playback_speed = 2.5
 anims/RESET = SubResource( 1 )
 anims/turn_left = SubResource( 2 )
 anims/turn_right = SubResource( 3 )
+
+[node name="SwooshPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -12.0
+
+[node name="ImpactPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -10.5
+
+[node name="TrainPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -16.0
+autoplay = true

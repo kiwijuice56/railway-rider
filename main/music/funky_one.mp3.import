@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/funky_one.mp3-70afca6121e9dbe2a674f144fb7993bf.mp3str"
+
+[deps]
+
+source_file="res://main/music/funky_one.mp3"
+dest_files=[ "res://.import/funky_one.mp3-70afca6121e9dbe2a674f144fb7993bf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

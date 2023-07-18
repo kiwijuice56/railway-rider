@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -14,3 +15,8 @@ speed = 16.0
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.56358, 0.232722, 0.792602, -0.503987, -0.663356, 0.553133, 0.654503, -0.711196, -0.256565, 0, 3.25847, 0 )
 light_energy = 1.844
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -14.0
+autoplay = true

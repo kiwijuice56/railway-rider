@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/private_eye.mp3-a60f46449443951772c3b08517fb04e5.mp3str"
+
+[deps]
+
+source_file="res://main/music/private_eye.mp3"
+dest_files=[ "res://.import/private_eye.mp3-a60f46449443951772c3b08517fb04e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
