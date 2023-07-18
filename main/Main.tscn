@@ -11,16 +11,17 @@ script = ExtResource( 1 )
 [node name="Level" type="Spatial" parent="."]
 
 [node name="FloorLane" parent="Level" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.24445 )
 
 [node name="FloorLane2" parent="Level" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13848, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13848, 0, -5.24445 )
 
 [node name="FloorLane3" parent="Level" instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15819, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.15819, 0, -5.24445 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Level"]
 transform = Transform( 0.56358, 0.232722, 0.792602, -0.503987, -0.663356, 0.553133, 0.654503, -0.711196, -0.256565, 0, 3.25847, 0 )
-light_energy = 0.529
+light_energy = 1.844
 
 [node name="Player" type="Spatial" parent="."]
 script = ExtResource( 4 )
