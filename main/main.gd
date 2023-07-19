@@ -2,7 +2,7 @@ class_name Main
 extends Node
 
 const TRACK_LENGTH: int = 24
-const TRACK_PATH: String = "res://main/tracks/"
+const TRACK_PATH: String = "res://main/track/"
 
 export var speed: float = 10
 export var render_distance: int = 10

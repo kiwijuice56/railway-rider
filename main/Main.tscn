@@ -5,11 +5,13 @@
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
 
 [sub_resource type="ProceduralSky" id=1]
-sky_top_color = Color( 0.270588, 0.709804, 0.952941, 1 )
+sky_top_color = Color( 0.180392, 0.666667, 0.937255, 1 )
 sky_horizon_color = Color( 0.823529, 0.890196, 0.941176, 1 )
+sky_curve = 0.0756806
 sky_energy = 1.1
 ground_bottom_color = Color( 0.360784, 0.572549, 0.203922, 1 )
-ground_horizon_color = Color( 0.435294, 0.752941, 0.619608, 1 )
+ground_horizon_color = Color( 0.435294, 0.752941, 0.529412, 1 )
+ground_curve = 0.0168179
 sun_color = Color( 1, 0.964706, 0.854902, 1 )
 sun_latitude = 18.64
 sun_longitude = 28.64

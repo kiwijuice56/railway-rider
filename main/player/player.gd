@@ -35,7 +35,7 @@ func _on_train_landed() -> void:
 
 func switch_lane(old_lane: int) -> void:
 	# Add some variation to most common sound
-	$SwooshPlayer.pitch_scale = rand_range(0.8, 1.1)
+	$SwooshPlayer.pitch_scale = rand_range(0.7, 1.2)
 	
 	# Animate the train
 	$AnimationPlayer.stop()

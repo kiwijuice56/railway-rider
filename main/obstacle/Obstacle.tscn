@@ -1,0 +1,8 @@
+[gd_scene format=2]
+
+[node name="Obstacle" type="Spatial"]
+
+[node name="KillArea" type="Area" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape" type="CollisionShape" parent="KillArea"]
