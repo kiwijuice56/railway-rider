@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
-[ext_resource path="res://main/track/props/cloud.png" type="Texture" id=4]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.14902, 0.654902, 0.937255, 1 )
@@ -73,7 +72,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 0, 36, -140 ), Vector3( 115.2, 36, -140 ) ]
+"values": [ Vector3( 0, 40, -140 ), Vector3( 115.2, 40, -140 ) ]
 }
 
 [node name="Main" type="Node"]
@@ -108,8 +107,8 @@ mesh = SubResource( 4 )
 
 [node name="Clouds" type="Sprite3D" parent="."]
 transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 4, 0, 34, -140 )
+visible = false
 billboard = 2
-texture = ExtResource( 4 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 11520, 750 )
 
