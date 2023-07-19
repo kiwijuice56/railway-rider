@@ -67,6 +67,8 @@ func _physics_process(_delta: float) -> void:
 				new_child = main_tracks[randi() % main_tracks.size()].instance()
 			else:
 				new_child = bg_tracks[randi() % bg_tracks.size()].instance()
+				if randf() < 0.5:
+					new_child.scale.x = -1
 			
 			parent.add_child(new_child)
 			new_child.global_translate(Vector3(0, 0, TRACK_LENGTH*(1-render_distance)))

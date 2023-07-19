@@ -380,7 +380,7 @@ visible = false
 current = true
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.913545, 0.406737, 0, -0.406737, 0.913545, 0, 5, 4.967 )
+transform = Transform( 1, 0, 0, 0, 0.913545, 0.406737, 0, -0.406737, 0.913545, 0, 4.9, 4.9 )
 current = true
 far = 159.1
 script = ExtResource( 6 )

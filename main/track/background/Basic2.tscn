@@ -1,0 +1,118 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://main/track/props/WallModel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/track/props/TreeModel.tscn" type="PackedScene" id=3]
+[ext_resource path="res://main/track/props/BushModel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://main/track/props/TreeModel2.tscn" type="PackedScene" id=5]
+
+[node name="Basic" type="Spatial"]
+
+[node name="WallModel2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2, 0, 0, 0, 1, -8.74228e-08, 0, 8.74228e-08, 1, 14.8194, -0.578, 0 )
+visible = false
+
+[node name="Bushes" type="Spatial" parent="."]
+
+[node name="BushModel" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.215, -0.582944, 3.26366 )
+
+[node name="BushModel7" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3651, -0.582944, 6.56452 )
+
+[node name="BushModel8" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3651, -0.582944, -5.55516 )
+
+[node name="BushModel3" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 0.973131, 0, 0.230254, 0, 1, 0, -0.230254, 0, 0.973131, -8.5424, -0.582944, 9.40089 )
+
+[node name="BushModel4" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 0.910547, 0, -0.413406, 0, 1, 0, 0.413406, 0, 0.910547, 13.0185, -0.582944, -7.86978 )
+
+[node name="BushModel2" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.83874, -0.582944, -2.22586 )
+
+[node name="BushModel9" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7869, -0.582944, 8.00421 )
+
+[node name="BushModel5" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0629, -0.582944, -4.49903 )
+
+[node name="BushModel6" parent="Bushes" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0629, -0.582944, 4.28976 )
+
+[node name="Trees" type="Spatial" parent="."]
+
+[node name="TreeModel7" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -27.539, -1.01432, -6.24541 )
+
+[node name="TreeModel9" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -34.2309, -1.6728, -2.74706 )
+
+[node name="TreeModel25" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -39.5176, -1.6728, -11.4863 )
+
+[node name="TreeModel8" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -26.4181, -1.01432, 1.64838 )
+
+[node name="TreeModel10" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -33.2022, -1.01432, 7.50554 )
+
+[node name="TreeModel11" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 36.2387, -0.670068, -6.24541 )
+
+[node name="TreeModel12" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 29.5467, -1.32855, -2.74706 )
+
+[node name="TreeModel15" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 29.5467, -1.32855, -12.0911 )
+
+[node name="TreeModel16" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 42.1052, -1.32855, -12.0911 )
+
+[node name="TreeModel17" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 45.6891, -1.32855, -2.5548 )
+
+[node name="TreeModel18" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 45.6891, -1.32855, 8.82392 )
+
+[node name="TreeModel19" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 54.9321, -1.32855, 1.37358 )
+
+[node name="TreeModel22" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -51.274, -1.32855, -2.5548 )
+
+[node name="TreeModel23" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -51.274, -1.32855, 8.82392 )
+
+[node name="TreeModel24" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -42.031, -1.32855, 1.37358 )
+
+[node name="TreeModel13" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 37.3595, -0.670068, 1.64838 )
+
+[node name="TreeModel14" parent="Trees" instance=ExtResource( 5 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 30.5754, -0.670068, 7.50554 )
+
+[node name="TreeModel" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -18.54, -0.707706, 0.249806 )
+
+[node name="TreeModel21" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1.45444, 0, -0.366895, 0, 1.5, 0, 0.366895, 0, 1.45444, -9.70782, -1.24573, -3.48555 )
+
+[node name="TreeModel2" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1.40732, 0, -0.519077, 0, 1.5, 0, 0.519077, 0, 1.40732, -20.6892, -0.963289, 7.47783 )
+
+[node name="TreeModel3" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( 1.14848, 0, -0.964883, 0, 1.5, 0, 0.964883, 0, 1.14848, -20.6892, -1.37481, -7.57832 )
+
+[node name="TreeModel4" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( -1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 23.251, -2.02664, 0.249806 )
+
+[node name="TreeModel20" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( -1.43055, 0, -0.451134, 0, 1.5, 0, -0.451134, 0, 1.43055, 13.8713, -1.12237, 0.0206342 )
+
+[node name="TreeModel5" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( -1.40732, 0, -0.519077, 0, 1.5, 0, -0.519077, 0, 1.40732, 20.1268, -1.95293, 7.47783 )
+
+[node name="TreeModel6" parent="Trees" instance=ExtResource( 3 )]
+transform = Transform( -1.14848, 0, -0.964883, 0, 1.5, 0, -0.964883, 0, 1.14848, 20.1268, -1.15413, -7.57832 )

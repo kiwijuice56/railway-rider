@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/Player.tscn" type="PackedScene" id=2]
@@ -6,10 +6,10 @@
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.14902, 0.654902, 0.937255, 1 )
-sky_horizon_color = Color( 0.83, 0.926333, 1, 1 )
+sky_horizon_color = Color( 0.831373, 0.92549, 1, 1 )
 sky_curve = 0.0756806
-ground_bottom_color = Color( 0.360784, 0.572549, 0.203922, 1 )
-ground_horizon_color = Color( 0.360784, 0.572549, 0.203922, 1 )
+ground_bottom_color = Color( 0.2, 0.380392, 1, 1 )
+ground_horizon_color = Color( 0.831373, 0.92549, 1, 1 )
 ground_curve = 0.0168179
 sun_color = Color( 1, 0.964706, 0.854902, 1 )
 sun_latitude = 180.0
@@ -36,6 +36,14 @@ adjustment_brightness = 1.15
 adjustment_contrast = 1.01
 adjustment_saturation = 1.1
 
+[sub_resource type="SpatialMaterial" id=3]
+params_diffuse_mode = 4
+albedo_color = Color( 0.360784, 0.572549, 0.203922, 1 )
+
+[sub_resource type="CubeMesh" id=4]
+material = SubResource( 3 )
+size = Vector3( 256, 0.2, 256 )
+
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 speed = 16.0
@@ -61,3 +69,15 @@ environment = SubResource( 2 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -4.37114e-08, -0.529919, 0.848048, 0, 0.848048, 0.529919, -1, 2.31635e-08, -3.70694e-08, 7.95001, 6.75508, 0 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.526171, 0 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 0.984732, 0.174078, 0, -0.174078, 0.984732, 0, 0, 0, 1, -26.8079, -0.526171, 0 )
+mesh = SubResource( 4 )
+
+[node name="MeshInstance3" type="MeshInstance" parent="."]
+transform = Transform( 0.984149, -0.177342, 0, 0.177342, 0.984149, 0, 0, 0, 1, 31.1502, -0.526173, 0 )
+mesh = SubResource( 4 )
