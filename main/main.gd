@@ -48,6 +48,8 @@ func _ready() -> void:
 		$Backgrounds.add_child(bg)
 		track.global_translate(Vector3(0, 0, TRACK_LENGTH*i))
 		bg.global_translate(Vector3(0, 0, TRACK_LENGTH*i))
+		if randf() < 0.5:
+			bg.scale.x = -1
 
 func _physics_process(_delta: float) -> void:
 	for child in $Tracks.get_children() + $Backgrounds.get_children():
