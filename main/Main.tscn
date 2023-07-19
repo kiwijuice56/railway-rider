@@ -5,45 +5,58 @@
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
 
 [sub_resource type="ProceduralSky" id=1]
-sky_top_color = Color( 0.180392, 0.666667, 0.937255, 1 )
-sky_horizon_color = Color( 0.823529, 0.890196, 0.941176, 1 )
+sky_top_color = Color( 0.14902, 0.654902, 0.937255, 1 )
+sky_horizon_color = Color( 0.83, 0.926333, 1, 1 )
 sky_curve = 0.0756806
-sky_energy = 1.1
 ground_bottom_color = Color( 0.360784, 0.572549, 0.203922, 1 )
-ground_horizon_color = Color( 0.435294, 0.752941, 0.529412, 1 )
+ground_horizon_color = Color( 0.360784, 0.572549, 0.203922, 1 )
 ground_curve = 0.0168179
 sun_color = Color( 1, 0.964706, 0.854902, 1 )
-sun_latitude = 18.64
+sun_latitude = 180.0
 sun_longitude = 28.64
 sun_angle_min = 1.37
-sun_energy = 1.07
 
 [sub_resource type="Environment" id=2]
 background_mode = 2
 background_sky = SubResource( 1 )
-background_sky_orientation = Basis( 1, 0, 0, 0, 0.999124, 0.0418582, 0, -0.0418582, 0.999124 )
-dof_blur_far_enabled = true
+background_sky_orientation = Basis( 1, 0, 0, 0, 0.999391, 0.0348995, 0, -0.0348995, 0.999391 )
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_sky_contribution = 0.0
+fog_enabled = true
+fog_color = Color( 0.823529, 0.890196, 0.941176, 1 )
+fog_sun_color = Color( 0, 0, 0, 1 )
+fog_depth_begin = 16.0
+fog_depth_end = 150.0
 dof_blur_far_distance = 32.0
 dof_blur_far_transition = 32.0
 dof_blur_far_amount = 0.06
 glow_enabled = true
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_saturation = 1.1
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 speed = 16.0
+render_distance = 9
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
 [node name="Tracks" type="Spatial" parent="."]
 
+[node name="Backgrounds" type="Spatial" parent="."]
+
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.56358, 0.232722, 0.792602, -0.503987, -0.663356, 0.553133, 0.654503, -0.711196, -0.256565, 0, 3.25847, 0 )
+visible = false
 light_energy = 1.844
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -14.0
-autoplay = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, -0.529919, 0.848048, 0, 0.848048, 0.529919, -1, 2.31635e-08, -3.70694e-08, 7.95001, 6.75508, 0 )

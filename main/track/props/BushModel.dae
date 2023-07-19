@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 3.2.0 commit date:2022-06-08, commit time:10:22, hash:e05e1e369187</authoring_tool>
+    </contributor>
+    <created>2023-07-19T13:49:57</created>
+    <modified>2023-07-19T13:49:57</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="tree-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.2883506 0.8000001 0.2363199 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="stem-effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <emission>
+              <color sid="emission">0 0 0 1</color>
+            </emission>
+            <diffuse>
+              <color sid="diffuse">0.8000001 0.1899585 0.1082826 1</color>
+            </diffuse>
+            <index_of_refraction>
+              <float sid="ior">1.45</float>
+            </index_of_refraction>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images/>
+  <library_materials>
+    <material id="tree-material" name="tree">
+      <instance_effect url="#tree-effect"/>
+    </material>
+    <material id="stem-material" name="stem">
+      <instance_effect url="#stem-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Icosphere_003-mesh" name="Icosphere.003">
+      <mesh>
+        <source id="Icosphere_003-mesh-positions">
+          <float_array id="Icosphere_003-mesh-positions-array" count="36">0 0 -1 0.7236 -0.52572 -0.447215 -0.276385 -0.85064 -0.447215 -0.894425 0 -0.447215 -0.276385 0.85064 -0.447215 0.7236 0.52572 -0.447215 0.276385 -0.85064 0.447215 -0.7236 -0.52572 0.447215 -0.7236 0.52572 0.447215 0.276385 0.85064 0.447215 0.894425 0 0.447215 0 0 1</float_array>
+          <technique_common>
+            <accessor source="#Icosphere_003-mesh-positions-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Icosphere_003-mesh-normals">
+          <float_array id="Icosphere_003-mesh-normals-array" count="60">0.1875965 -0.5773537 -0.794651 0.6070647 0 -0.7946525 -0.4911221 -0.356829 -0.7946522 -0.4911221 0.356829 -0.7946522 0.1875965 0.5773537 -0.794651 0.9822462 0 -0.1875968 0.3035356 -0.9341716 -0.1875891 -0.7946492 -0.5773594 -0.1875869 -0.7946492 0.5773594 -0.1875869 0.3035356 0.9341716 -0.1875891 0.7946492 -0.5773594 0.1875869 -0.3035356 -0.9341716 0.1875892 -0.9822462 0 0.1875968 -0.3035356 0.9341716 0.1875892 0.7946492 0.5773594 0.1875869 0.4911221 -0.356829 0.7946522 -0.1875965 -0.5773537 0.7946512 -0.6070647 0 0.7946525 -0.1875965 0.5773537 0.794651 0.4911221 0.356829 0.7946522</float_array>
+          <technique_common>
+            <accessor source="#Icosphere_003-mesh-normals-array" count="20" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Icosphere_003-mesh-map-0">
+          <float_array id="Icosphere_003-mesh-map-0-array" count="120">0.181819 0 0.272728 0.157461 0.09090995 0.157461 0.272728 0.157461 0.363637 0 0.454546 0.157461 0.909091 0 1 0.157461 0.818182 0.157461 0.727273 0 0.818182 0.157461 0.636364 0.157461 0.545455 0 0.636364 0.157461 0.454546 0.157461 0.272728 0.157461 0.454546 0.157461 0.363637 0.314921 0.09090995 0.157461 0.272728 0.157461 0.181819 0.314921 0.818182 0.157461 1 0.157461 0.909091 0.314921 0.636364 0.157461 0.818182 0.157461 0.727273 0.314921 0.454546 0.157461 0.636364 0.157461 0.545455 0.314921 0.272728 0.157461 0.363637 0.314921 0.181819 0.314921 0.09090995 0.157461 0.181819 0.314921 0 0.314921 0.818182 0.157461 0.909091 0.314921 0.727273 0.314921 0.636364 0.157461 0.727273 0.314921 0.545455 0.314921 0.454546 0.157461 0.545455 0.314921 0.363637 0.314921 0.181819 0.314921 0.363637 0.314921 0.272728 0.472382 0 0.314921 0.181819 0.314921 0.09090995 0.472382 0.727273 0.314921 0.909091 0.314921 0.818182 0.472382 0.545455 0.314921 0.727273 0.314921 0.636364 0.472382 0.363637 0.314921 0.545455 0.314921 0.454546 0.472382</float_array>
+          <technique_common>
+            <accessor source="#Icosphere_003-mesh-map-0-array" count="60" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Icosphere_003-mesh-vertices">
+          <input semantic="POSITION" source="#Icosphere_003-mesh-positions"/>
+        </vertices>
+        <triangles material="tree-material" count="20">
+          <input semantic="VERTEX" source="#Icosphere_003-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Icosphere_003-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Icosphere_003-mesh-map-0" offset="2" set="0"/>
+          <p>0 0 0 1 0 1 2 0 2 1 1 3 0 1 4 5 1 5 0 2 6 2 2 7 3 2 8 0 3 9 3 3 10 4 3 11 0 4 12 4 4 13 5 4 14 1 5 15 5 5 16 10 5 17 2 6 18 1 6 19 6 6 20 3 7 21 2 7 22 7 7 23 4 8 24 3 8 25 8 8 26 5 9 27 4 9 28 9 9 29 1 10 30 10 10 31 6 10 32 2 11 33 6 11 34 7 11 35 3 12 36 7 12 37 8 12 38 4 13 39 8 13 40 9 13 41 5 14 42 9 14 43 10 14 44 6 15 45 10 15 46 11 15 47 7 16 48 6 16 49 11 16 50 8 17 51 7 17 52 11 17 53 9 18 54 8 18 55 11 18 56 10 19 57 9 19 58 11 19 59</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="Cylinder_001-mesh" name="Cylinder.001">
+      <mesh>
+        <source id="Cylinder_001-mesh-positions">
+          <float_array id="Cylinder_001-mesh-positions-array" count="30">0 1 -1 0 1 1 0.9510565 0.309017 -1 0.9510565 0.309017 1 0.5877852 -0.8090171 -1 0.5877852 -0.8090171 1 -0.5877854 -0.809017 -1 -0.5877854 -0.809017 1 -0.9510565 0.3090171 -1 -0.9510565 0.3090171 1</float_array>
+          <technique_common>
+            <accessor source="#Cylinder_001-mesh-positions-array" count="10" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cylinder_001-mesh-normals">
+          <float_array id="Cylinder_001-mesh-normals-array" count="27">0.5877853 0.8090171 0 0.9510565 -0.3090171 0 0 -1 0 1.814e-7 0 1 -0.9510567 -0.3090169 0 -0.5877852 0.8090171 0 0 0 -1 0 0 1 0 0 -1</float_array>
+          <technique_common>
+            <accessor source="#Cylinder_001-mesh-normals-array" count="9" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cylinder_001-mesh-map-0">
+          <float_array id="Cylinder_001-mesh-map-0-array" count="96">1 1 0.8 0.5 1 0.5 0.8 1 0.6 0.5 0.8 0.5 0.6 1 0.4 0.5 0.6 0.5 0.02174645 0.3241641 0.1089315 0.0558359 0.3910685 0.0558359 0.4 1 0.2 0.5 0.4 0.5 0.2 1 0 0.5 0.2 0.5 0.9782536 0.324164 0.6089316 0.0558359 0.5217465 0.3241641 1 1 0.8 1 0.8 0.5 0.8 1 0.6 1 0.6 0.5 0.6 1 0.4 1 0.4 0.5 0.3910685 0.0558359 0.4782536 0.324164 0.25 0.49 0.25 0.49 0.02174645 0.3241641 0.3910685 0.0558359 0.4 1 0.2 1 0.2 0.5 0.2 1 0 1 0 0.5 0.5217465 0.3241641 0.75 0.49 0.9782536 0.324164 0.9782536 0.324164 0.8910685 0.0558359 0.6089316 0.0558359</float_array>
+          <technique_common>
+            <accessor source="#Cylinder_001-mesh-map-0-array" count="48" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cylinder_001-mesh-vertices">
+          <input semantic="POSITION" source="#Cylinder_001-mesh-positions"/>
+        </vertices>
+        <triangles material="stem-material" count="16">
+          <input semantic="VERTEX" source="#Cylinder_001-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cylinder_001-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cylinder_001-mesh-map-0" offset="2" set="0"/>
+          <p>1 0 0 2 0 1 0 0 2 3 1 3 4 1 4 2 1 5 5 2 6 6 2 7 4 2 8 9 3 9 7 3 10 5 3 11 7 4 12 8 4 13 6 4 14 9 5 15 0 5 16 8 5 17 2 6 18 6 6 19 8 6 20 1 0 21 3 0 22 2 0 23 3 1 24 5 1 25 4 1 26 5 2 27 7 2 28 6 2 29 5 7 30 3 7 31 1 7 32 1 7 33 9 7 34 5 7 35 7 4 36 9 4 37 8 4 38 9 5 39 1 5 40 0 5 41 8 8 42 0 8 43 2 8 44 2 8 45 4 8 46 6 8 47</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="leaf_003" name="leaf.003" type="NODE">
+        <matrix sid="transform">-0.1532914 1.122508 -2.79581e-8 0 -0.9922506 -0.1355033 -0.4734632 0 -0.524845 -0.07167362 0.8951102 1.089763 0 0 0 1</matrix>
+        <instance_geometry url="#Icosphere_003-mesh" name="leaf.003">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="tree-material" target="#tree-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="stem_001" name="stem.001" type="NODE">
+        <matrix sid="transform">0.1681296 0 0 0 0 0.1681296 0 0 0 0 0.3244792 0.3105742 0 0 0 1</matrix>
+        <instance_geometry url="#Cylinder_001-mesh" name="stem.001">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="stem-material" target="#stem-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene"/>
+  </scene>
+</COLLADA>
