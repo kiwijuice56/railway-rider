@@ -1,10 +1,13 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://main/player/player.gd" type="Script" id=1]
 [ext_resource path="res://main/player/train/Train.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/player/sounds/swoosh.wav" type="AudioStream" id=3]
 [ext_resource path="res://main/player/sounds/impact.wav" type="AudioStream" id=4]
 [ext_resource path="res://main/player/sounds/train.mp3" type="AudioStream" id=5]
+[ext_resource path="res://main/player/screen_shake_camera.gd" type="Script" id=6]
+[ext_resource path="res://main/player/sounds/crash.wav" type="AudioStream" id=7]
+[ext_resource path="res://main/player/sounds/creak.wav" type="AudioStream" id=8]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -97,6 +100,18 @@ tracks/7/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("CreakPlayer:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
 }
 
 [sub_resource type="Animation" id=4]
@@ -211,7 +226,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.1, 0.3, 1.2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( 1, 1, 1 ), Vector3( 1, 0.8, 1 ), Vector3( 1, 1.35, 1 ), Vector3( 1, 1, 1 ) ]
+"values": [ Vector3( 1, 1, 1 ), Vector3( 1, 0.7, 1 ), Vector3( 1, 1.35, 1 ), Vector3( 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Train/TrainModel:rotation_degrees")
@@ -233,6 +248,18 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0.05 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CreakPlayer:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ true ]
@@ -355,6 +382,7 @@ current = true
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.953722, 0.300689, 0, -0.300689, 0.953722, 0, 4.439, 4.967 )
 current = true
+script = ExtResource( 6 )
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -370,10 +398,19 @@ anims/turn_right = SubResource( 3 )
 [node name="SwooshPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -12.0
+pitch_scale = 1.25
+
+[node name="CreakPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 8 )
+volume_db = -16.0
 
 [node name="ImpactPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
-volume_db = -10.5
+volume_db = -9.0
+
+[node name="CrashPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 7 )
+volume_db = -12.0
 
 [node name="TrainPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )

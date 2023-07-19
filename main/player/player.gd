@@ -7,6 +7,10 @@ export var cam_switch_time: float = 0.21
 
 var lane: int = 0
 
+func _ready() -> void:
+# warning-ignore:return_value_discarded
+	$Train.connect("landed", self, "_on_train_landed")
+
 func _process(_delta: float) -> void:
 	if not $Tween.is_active() and Input.is_action_pressed("jump") and $Train.is_on_floor():
 		$Train.jump()
@@ -25,10 +29,15 @@ func _process(_delta: float) -> void:
 	else:
 		lane = old_lane
 
+func _on_train_landed() -> void:
+	$CrashPlayer.play()
+	$Camera.shake(0.25, 40, 0.2)
+
 func switch_lane(old_lane: int) -> void:
+	# Add some variation to most common sound
 	$SwooshPlayer.pitch_scale = rand_range(0.8, 1.1)
-	$ImpactPlayer.pitch_scale = rand_range(0.8, 1.1)
 	
+	# Animate the train
 	$AnimationPlayer.stop()
 	var dir: String = "left" if old_lane > lane else "right"
 	if $Train.is_on_floor():
@@ -36,8 +45,16 @@ func switch_lane(old_lane: int) -> void:
 	else:
 		$AnimationPlayer.play("flip_" + dir)
 	
+	# Tween camera and train at an offset
+	
 	$Tween.interpolate_property($Train, "translation:x", null, 
 	lane_offset * lane, switch_time,
+	Tween.TRANS_QUAD, Tween.EASE_OUT)
+	
+	# Both properties need to be set on the ScreenShakeCamera
+	
+	$Tween.interpolate_property($Camera, "original_translation:x", null, 
+	lane_offset * lane, cam_switch_time, 
 	Tween.TRANS_QUAD, Tween.EASE_OUT)
 	
 	$Tween.interpolate_property($Camera, "translation:x", null, 
