@@ -15,7 +15,7 @@ sun_angle_min = 1.37
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
-background_sky_orientation = Basis( 1, 0, 0, 0, 0.999391, 0.0348995, 0, -0.0348995, 0.999391 )
+background_sky_orientation = Basis( 1, 0, 0, 0, 0.998021, 0.0628776, 0, -0.0628776, 0.998021 )
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_sky_contribution = 0.0
 fog_enabled = true

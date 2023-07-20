@@ -16,7 +16,8 @@ size = Vector3( 256, 0.2, 256 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-initial_speed = 12.0
+initial_speed = 15.0
+max_speed = 48.0
 render_distance = 9
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -34,17 +35,17 @@ simulation_distance = 70
 [node name="Planes" type="Spatial" parent="."]
 
 [node name="Plane3" type="MeshInstance" parent="Planes"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.526171, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.526171, -96.3721 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
 
 [node name="Plane2" type="MeshInstance" parent="Planes"]
-transform = Transform( 0.984732, 0.174078, 0, -0.174078, 0.984732, 0, 0, 0, 1, -26.8079, -0.526171, 0 )
+transform = Transform( 0.984732, 0.174078, 0, -0.174078, 0.984732, 0, 0, 0, 1, -26.8079, -0.526171, -96.3721 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
 
 [node name="Plane" type="MeshInstance" parent="Planes"]
-transform = Transform( 0.984149, -0.177342, 0, 0.177342, 0.984149, 0, 0, 0, 1, 31.1502, -0.526173, 0 )
+transform = Transform( 0.984149, -0.177342, 0, 0.177342, 0.984149, 0, 0, 0, 1, 31.1502, -0.526173, -96.3721 )
 mesh = SubResource( 4 )
 skeleton = NodePath("../..")
 
@@ -54,5 +55,6 @@ volume_db = -14.0
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.508283, 0 )
+visible = false
 opacity = 0.38
 texture = ExtResource( 5 )

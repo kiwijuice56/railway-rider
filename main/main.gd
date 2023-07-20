@@ -52,6 +52,8 @@ func _ready() -> void:
 		bg.global_translate(Vector3(0, 0, TRACK_LENGTH*i))
 		if randf() < 0.5:
 			bg.scale.x = -1
+		if randf() < 0.5:
+			track.scale.x = -1
 	
 	# Add city skylines to background
 	$Sprite3D.global_translate(Vector3(0,0,TRACK_LENGTH * -6))
@@ -80,8 +82,8 @@ func _physics_process(_delta: float) -> void:
 				new_child = main_tracks[randi() % main_tracks.size()].instance()
 			else:
 				new_child = bg_tracks[randi() % bg_tracks.size()].instance()
-				if randf() < 0.5:
-					new_child.scale.x = -1
+			if randf() < 0.5:
+				new_child.scale.x = -1
 			
 			# Adding a child will overlap it with the player unless it is spawned far away
 			new_child.translation.y = -100

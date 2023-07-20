@@ -12,6 +12,28 @@ func _ready() -> void:
 	$Train.connect("landed", self, "_on_train_landed")
 
 func _process(_delta: float) -> void:
+	# Sync camera y when on a platform
+	if $Train.translation.y > 1.5 and $Camera.translation.y <= 4.9:
+		$Camera/Tween.interpolate_property($Camera, "original_translation:y", null, 
+		4.9 + 2.0, cam_switch_time, 
+		Tween.TRANS_QUAD, Tween.EASE_OUT)
+		
+		$Camera/Tween.interpolate_property($Camera, "translation:y", null, 
+		4.9 + 2.0, cam_switch_time, 
+		Tween.TRANS_QUAD, Tween.EASE_OUT)
+		
+		$Camera/Tween.start()
+	if $Train.translation.y < 1.5 and $Camera.translation.y >= 4.9:
+		$Camera/Tween.interpolate_property($Camera, "original_translation:y", null, 
+		4.9, cam_switch_time, 
+		Tween.TRANS_QUAD, Tween.EASE_OUT)
+		
+		$Camera/Tween.interpolate_property($Camera, "translation:y", null, 
+		4.9, cam_switch_time, 
+		Tween.TRANS_QUAD, Tween.EASE_OUT)
+		
+		$Camera/Tween.start()
+	
 	if not $Tween.is_active() and Input.is_action_pressed("jump") and $Train.is_on_floor():
 		$Train.jump()
 		$AnimationPlayer.stop()

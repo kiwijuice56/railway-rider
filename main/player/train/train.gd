@@ -12,7 +12,6 @@ func _physics_process(delta: float) -> void:
 	velocity += GRAVITY * delta
 	var was_on_floor: bool = is_on_floor()
 	velocity = move_and_slide(velocity, Vector3.UP)
-	print(velocity)
 	
 	if not was_on_floor and is_on_floor():
 		emit_signal("landed")

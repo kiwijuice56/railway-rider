@@ -385,6 +385,8 @@ current = true
 far = 159.1
 script = ExtResource( 6 )
 
+[node name="Tween" type="Tween" parent="Camera"]
+
 [node name="Tween" type="Tween" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

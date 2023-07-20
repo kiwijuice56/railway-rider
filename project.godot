@@ -53,6 +53,11 @@ _global_script_classes=[ {
 "class": "Train",
 "language": "GDScript",
 "path": "res://main/player/train/train.gd"
+}, {
+"base": "Obstacle",
+"class": "TrainObstacle",
+"language": "GDScript",
+"path": "res://main/track/obstacle/train/train.gd"
 } ]
 _global_script_class_icons={
 "Collectable": "",
@@ -63,7 +68,8 @@ _global_script_class_icons={
 "Player": "",
 "ScreenShakeCamera": "",
 "Surfer": "",
-"Train": ""
+"Train": "",
+"TrainObstacle": ""
 }
 
 [application]
