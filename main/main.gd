@@ -80,5 +80,7 @@ func _physics_process(_delta: float) -> void:
 				if randf() < 0.5:
 					new_child.scale.x = -1
 			
+			# Adding a child will overlap it with the player unless it is spawned far away
+			new_child.translation.y = -100
 			parent.add_child(new_child)
-			new_child.global_translate(Vector3(0, 0, offset + TRACK_LENGTH * (1 - render_distance)))
+			new_child.translation = Vector3(0, 0, offset + TRACK_LENGTH * (1 - render_distance))

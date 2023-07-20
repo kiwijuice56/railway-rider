@@ -1,41 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
 [ext_resource path="res://main/obstacle_spawner.gd" type="Script" id=4]
-
-[sub_resource type="ProceduralSky" id=1]
-sky_top_color = Color( 0.14902, 0.654902, 0.937255, 1 )
-sky_horizon_color = Color( 0.831373, 0.92549, 1, 1 )
-sky_curve = 0.0756806
-ground_bottom_color = Color( 0.2, 0.380392, 1, 1 )
-ground_horizon_color = Color( 0.831373, 0.92549, 1, 1 )
-ground_curve = 0.0168179
-sun_color = Color( 1, 0.964706, 0.854902, 1 )
-sun_latitude = 180.0
-sun_longitude = 28.64
-sun_angle_min = 1.37
-
-[sub_resource type="Environment" id=2]
-background_mode = 2
-background_sky = SubResource( 1 )
-background_sky_orientation = Basis( 1, 0, 0, 0, 0.999391, 0.0348995, 0, -0.0348995, 0.999391 )
-ambient_light_color = Color( 1, 1, 1, 1 )
-ambient_light_sky_contribution = 0.0
-fog_enabled = true
-fog_color = Color( 0.823529, 0.890196, 0.941176, 1 )
-fog_sun_color = Color( 0, 0, 0, 1 )
-fog_depth_begin = 16.0
-fog_depth_end = 150.0
-dof_blur_far_distance = 32.0
-dof_blur_far_transition = 32.0
-dof_blur_far_amount = 0.06
-glow_enabled = true
-adjustment_enabled = true
-adjustment_brightness = 1.15
-adjustment_contrast = 1.01
-adjustment_saturation = 1.1
 
 [sub_resource type="SpatialMaterial" id=3]
 params_diffuse_mode = 4
@@ -44,37 +12,6 @@ albedo_color = Color( 0.360784, 0.572549, 0.203922, 1 )
 [sub_resource type="CubeMesh" id=4]
 material = SubResource( 3 )
 size = Vector3( 256, 0.2, 256 )
-
-[sub_resource type="Animation" id=5]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 0, 34, -140 ) ]
-}
-
-[sub_resource type="Animation" id=6]
-resource_name = "scroll"
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:translation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 40, -140 ), Vector3( 115.2, 40, -140 ) ]
-}
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
@@ -93,33 +30,22 @@ script = ExtResource( 4 )
 obstacle_frequency = 30
 simulation_distance = 70
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 2 )
+[node name="Planes" type="Spatial" parent="."]
 
-[node name="Plane3" type="MeshInstance" parent="."]
+[node name="Plane3" type="MeshInstance" parent="Planes"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.526171, 0 )
 mesh = SubResource( 4 )
+skeleton = NodePath("../..")
 
-[node name="Plane2" type="MeshInstance" parent="."]
+[node name="Plane2" type="MeshInstance" parent="Planes"]
 transform = Transform( 0.984732, 0.174078, 0, -0.174078, 0.984732, 0, 0, 0, 1, -26.8079, -0.526171, 0 )
 mesh = SubResource( 4 )
+skeleton = NodePath("../..")
 
-[node name="Plane" type="MeshInstance" parent="."]
+[node name="Plane" type="MeshInstance" parent="Planes"]
 transform = Transform( 0.984149, -0.177342, 0, 0.177342, 0.984149, 0, 0, 0, 1, 31.1502, -0.526173, 0 )
 mesh = SubResource( 4 )
-
-[node name="Clouds" type="Sprite3D" parent="."]
-transform = Transform( 6, 0, 0, 0, 4, 0, 0, 0, 4, 0, 34, -140 )
-visible = false
-billboard = 2
-region_enabled = true
-region_rect = Rect2( 0, 0, 11520, 750 )
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Clouds"]
-autoplay = "scroll"
-playback_speed = 0.01
-anims/RESET = SubResource( 5 )
-anims/scroll = SubResource( 6 )
+skeleton = NodePath("../..")
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
