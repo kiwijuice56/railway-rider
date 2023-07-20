@@ -77,7 +77,8 @@ tracks/0/keys = {
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-speed = 16.0
+initial_speed = 12.0
+accel = 0.002
 render_distance = 9
 
 [node name="Player" parent="." instance=ExtResource( 2 )]

@@ -5,13 +5,18 @@ const TRACK_LENGTH: int = 24
 const TRACK_MAIN_PATH: String = "res://main/track/main/"
 const TRACK_BG_PATH: String = "res://main/track/background/"
 
-export var speed: float = 10
+export var initial_speed: float = 6
+export var score_per_speed: float = 0.003
+export var accel: float = 0.001
 export var render_distance: int = 10
 
+var speed: float
 var main_tracks: Array
 var bg_tracks: Array
 
 func _ready() -> void:
+	speed = initial_speed
+	
 	randomize()
 	# Load all tracks
 	# https://docs.godotengine.org/en/3.6/classes/class_directory.html
@@ -52,6 +57,10 @@ func _ready() -> void:
 			bg.scale.x = -1
 
 func _physics_process(_delta: float) -> void:
+	GlobalState.score += speed * score_per_speed
+	speed += accel
+	print(speed, " ", GlobalState.score)
+	
 	for child in $Tracks.get_children() + $Backgrounds.get_children():
 		# Move tracks to create effect of train moving
 		child.global_translate(Vector3(0, 0, speed/100.0))
