@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
 [ext_resource path="res://main/obstacle_spawner.gd" type="Script" id=4]
+[ext_resource path="res://assets/city-skyline-silhouette-design-free-vector-removebg-preview.png" type="Texture" id=5]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.14902, 0.654902, 0.937255, 1 )
@@ -124,3 +125,8 @@ anims/scroll = SubResource( 6 )
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -14.0
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.508283, 0 )
+opacity = 0.38
+texture = ExtResource( 5 )

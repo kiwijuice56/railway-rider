@@ -52,6 +52,9 @@ func _ready() -> void:
 		bg.global_translate(Vector3(0, 0, TRACK_LENGTH*i))
 		if randf() < 0.5:
 			bg.scale.x = -1
+	
+	# Add city skylines to background
+	$Sprite3D.global_translate(Vector3(0,0,TRACK_LENGTH * -6))
 
 func _physics_process(_delta: float) -> void:
 	GlobalState.score += speed * score_per_speed
