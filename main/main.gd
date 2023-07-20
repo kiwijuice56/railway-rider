@@ -6,6 +6,7 @@ const TRACK_MAIN_PATH: String = "res://main/track/main/"
 const TRACK_BG_PATH: String = "res://main/track/background/"
 
 export var initial_speed: float = 6
+export var max_speed: float = 64
 export var score_per_speed: float = 0.003
 export var accel: float = 0.001
 export var render_distance: int = 10
@@ -15,32 +16,28 @@ var main_tracks: Array
 var bg_tracks: Array
 
 func _ready() -> void:
+	randomize()
 	speed = initial_speed
 	
-	randomize()
 	# Load all tracks
 	# https://docs.godotengine.org/en/3.6/classes/class_directory.html
 	var dir = Directory.new()
-	if dir.open(TRACK_MAIN_PATH) == OK:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if not dir.current_is_dir():
-				main_tracks.append(load(TRACK_MAIN_PATH + file_name))
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
+	dir.open(TRACK_MAIN_PATH)
+	dir.list_dir_begin()
+	var file_name = dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir():
+			main_tracks.append(load(TRACK_MAIN_PATH + file_name))
+		file_name = dir.get_next()
 	
 	dir = Directory.new()
-	if dir.open(TRACK_BG_PATH) == OK:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if not dir.current_is_dir():
-				bg_tracks.append(load(TRACK_BG_PATH + file_name))
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
+	dir.open(TRACK_BG_PATH)
+	dir.list_dir_begin()
+	file_name = dir.get_next()
+	while file_name != "":
+		if not dir.current_is_dir():
+			bg_tracks.append(load(TRACK_BG_PATH + file_name))
+		file_name = dir.get_next()
 	
 	# Initiate starting tracks
 	for i in range(1-render_distance,1):
@@ -59,7 +56,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	GlobalState.score += speed * score_per_speed
 	speed += accel
-	print(speed, " ", GlobalState.score)
+	speed = min(speed, max_speed)
 	
 	for child in $Tracks.get_children() + $Backgrounds.get_children():
 		# Move tracks to create effect of train moving
@@ -67,6 +64,8 @@ func _physics_process(_delta: float) -> void:
 		
 		# Cull tracks that have left the screen
 		if child.to_global(Vector3(0,0,0)).z >= 24:
+			var offset: float = child.to_global(Vector3(0,0,0)).z - 24
+			
 			var parent: Spatial = child.get_parent()
 			parent.remove_child(child)
 			child.queue_free()
@@ -82,4 +81,4 @@ func _physics_process(_delta: float) -> void:
 					new_child.scale.x = -1
 			
 			parent.add_child(new_child)
-			new_child.global_translate(Vector3(0, 0, TRACK_LENGTH*(1-render_distance)))
+			new_child.global_translate(Vector3(0, 0, offset + TRACK_LENGTH * (1 - render_distance)))
