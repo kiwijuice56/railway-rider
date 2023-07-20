@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
+[ext_resource path="res://main/Obstacles.gd" type="Script" id=4]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.14902, 0.654902, 0.937255, 1 )
@@ -77,8 +78,6 @@ tracks/0/keys = {
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-initial_speed = 20.0
-accel = 0.002
 render_distance = 9
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -118,3 +117,8 @@ autoplay = "scroll"
 playback_speed = 0.01
 anims/RESET = SubResource( 5 )
 anims/scroll = SubResource( 6 )
+
+[node name="Obstacles" type="Spatial" parent="."]
+script = ExtResource( 4 )
+obstacle_frequency = 30
+simulation_distance = 70
