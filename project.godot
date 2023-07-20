@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Area",
+"class": "Collectable",
+"language": "GDScript",
+"path": "res://main/track/collectable/collectable.gd"
+}, {
+"base": "Spatial",
+"class": "CollectableSpawner",
+"language": "GDScript",
+"path": "res://main/track/collectable/collectable_spawner.gd"
+}, {
 "base": "Node",
 "class": "Main",
 "language": "GDScript",
@@ -45,6 +55,8 @@ _global_script_classes=[ {
 "path": "res://main/player/train/train.gd"
 } ]
 _global_script_class_icons={
+"Collectable": "",
+"CollectableSpawner": "",
 "Main": "",
 "Obstacle": "",
 "ObstacleSpawner": "",
@@ -130,6 +142,7 @@ jump={
 3d_physics/layer_1="player"
 3d_physics/layer_2="obstacle"
 3d_physics/layer_3="floor"
+3d_physics/layer_4="collectable"
 
 [physics]
 
