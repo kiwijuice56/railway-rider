@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/Running.dae-2029162e9c3d56ba0b6418573966ccbb.scn"
+path="res://.import/Running.dae-96b346d96685368afaadf5bc13f1bbba.scn"
 
 [deps]
 
-source_file="res://main/obstacles/assets/Subway Surfer Running/Running.dae"
-dest_files=[ "res://.import/Running.dae-2029162e9c3d56ba0b6418573966ccbb.scn" ]
+source_file="res://main/track/obstacle/surfer/Running.dae"
+dest_files=[ "res://.import/Running.dae-96b346d96685368afaadf5bc13f1bbba.scn" ]
 
 [params]
 

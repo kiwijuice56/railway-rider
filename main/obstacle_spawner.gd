@@ -1,3 +1,4 @@
+class_name ObstacleSpawner
 extends Spatial
 
 
@@ -6,7 +7,7 @@ export var simulation_distance = 100
 
 
 
-var obstacles = [preload("res://main/obstacles/Subway Surfer.tscn")]
+var obstacles = [preload("res://main/track/obstacle/surfer/Surfer.tscn")]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,10 +23,11 @@ func _process(delta):
 
 		
 		var obstacle = obstacles[randi() % obstacles.size()].instance()
-		obstacle.global_translate(Vector3(-3+3*x, y*2.5, -simulation_distance))
-
 		obstacle.speed = 10 + randf() * 20
 		add_child(obstacle)
+		
+		obstacle.global_translate(Vector3(-3+3*x, y*2.5, -simulation_distance))
+		
 
 
 	for child in get_children():

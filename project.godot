@@ -15,6 +15,16 @@ _global_script_classes=[ {
 "path": "res://main/main.gd"
 }, {
 "base": "Spatial",
+"class": "Obstacle",
+"language": "GDScript",
+"path": "res://main/track/obstacle/obstacle.gd"
+}, {
+"base": "Spatial",
+"class": "ObstacleSpawner",
+"language": "GDScript",
+"path": "res://main/obstacle_spawner.gd"
+}, {
+"base": "Spatial",
 "class": "Player",
 "language": "GDScript",
 "path": "res://main/player/player.gd"
@@ -24,6 +34,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://main/player/screen_shake_camera.gd"
 }, {
+"base": "Obstacle",
+"class": "Surfer",
+"language": "GDScript",
+"path": "res://main/track/obstacle/surfer/surfer.gd"
+}, {
 "base": "KinematicBody",
 "class": "Train",
 "language": "GDScript",
@@ -31,8 +46,11 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Main": "",
+"Obstacle": "",
+"ObstacleSpawner": "",
 "Player": "",
 "ScreenShakeCamera": "",
+"Surfer": "",
 "Train": ""
 }
 
