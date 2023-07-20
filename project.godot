@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Collectable",
+"class": "Coin",
+"language": "GDScript",
+"path": "res://main/track/collectable/coin/coin.gd"
+}, {
 "base": "Area",
 "class": "Collectable",
 "language": "GDScript",
@@ -60,6 +65,7 @@ _global_script_classes=[ {
 "path": "res://main/track/obstacle/train/train.gd"
 } ]
 _global_script_class_icons={
+"Coin": "",
 "Collectable": "",
 "CollectableSpawner": "",
 "Main": "",
