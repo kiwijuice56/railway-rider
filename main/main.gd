@@ -59,6 +59,7 @@ func _ready() -> void:
 func _physics_process(_delta: float) -> void:
 	GlobalState.score += speed * score_per_speed
 	speed += accel
+	print(speed, " ", GlobalState.score)
 	
 	for child in $Tracks.get_children() + $Backgrounds.get_children():
 		# Move tracks to create effect of train moving

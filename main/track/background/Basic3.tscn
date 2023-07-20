@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/track/props/BuildngModel.tscn" type="PackedScene" id=1]
-[ext_resource path="res://main/track/props/material/window.material" type="Material" id=2]
-[ext_resource path="res://main/track/props/material/top.material" type="Material" id=3]
+[ext_resource path="res://main/track/props/window.material" type="Material" id=2]
+[ext_resource path="res://main/track/props/top.material" type="Material" id=3]
 [ext_resource path="res://main/track/props/BushModel.tscn" type="PackedScene" id=4]
 
 [sub_resource type="SpatialMaterial" id=1]
