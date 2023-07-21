@@ -3,8 +3,8 @@
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
-[ext_resource path="res://main/obstacle_spawner.gd" type="Script" id=4]
 [ext_resource path="res://assets/city-skyline-silhouette-design-free-vector-removebg-preview.png" type="Texture" id=5]
+[ext_resource path="res://main/surfer_spawner.gd" type="Script" id=6]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_diffuse_mode = 4
@@ -25,12 +25,6 @@ render_distance = 9
 [node name="Tracks" type="Spatial" parent="."]
 
 [node name="Backgrounds" type="Spatial" parent="."]
-
-[node name="Obstacles" type="Spatial" parent="."]
-visible = false
-script = ExtResource( 4 )
-obstacle_frequency = 30
-simulation_distance = 70
 
 [node name="Planes" type="Spatial" parent="."]
 
@@ -62,3 +56,6 @@ texture = ExtResource( 5 )
 
 [node name="TitleCamera" type="Camera" parent="."]
 transform = Transform( 0.826747, 0, -0.562574, 0, 1, 0, 0.562574, 0, 0.826747, -4.031, 2.862, 4.549 )
+
+[node name="Surfers" type="Spatial" parent="."]
+script = ExtResource( 6 )
