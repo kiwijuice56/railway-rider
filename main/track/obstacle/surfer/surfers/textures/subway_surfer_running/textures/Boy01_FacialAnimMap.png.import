@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boy01_FacialAnimMap.png-52af9d0154313e3299433d8aaa827ed2.stex"
+path="res://.import/Boy01_FacialAnimMap.png-b30ffda3863097c8df04b9aa62698a7e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/track/obstacle/surfer/textures/Boy01_FacialAnimMap.png"
-dest_files=[ "res://.import/Boy01_FacialAnimMap.png-52af9d0154313e3299433d8aaa827ed2.stex" ]
+source_file="res://main/track/obstacle/surfer/surfers/textures/subway_surfer_running/textures/Boy01_FacialAnimMap.png"
+dest_files=[ "res://.import/Boy01_FacialAnimMap.png-b30ffda3863097c8df04b9aa62698a7e.stex" ]
 
 [params]
 

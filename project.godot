@@ -54,11 +54,6 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://main/player/screen_shake_camera.gd"
 }, {
-"base": "Obstacle",
-"class": "Surfer",
-"language": "GDScript",
-"path": "res://main/track/obstacle/surfer/running_subway_surfer.gd"
-}, {
 "base": "KinematicBody",
 "class": "Train",
 "language": "GDScript",
@@ -79,7 +74,6 @@ _global_script_class_icons={
 "ObstacleSpawner": "",
 "Player": "",
 "ScreenShakeCamera": "",
-"Surfer": "",
 "Train": "",
 "TrainObstacle": ""
 }

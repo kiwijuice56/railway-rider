@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main/track/obstacle/surfer/surfers/textures/subway_surfer_running/Running.dae" type="PackedScene" id=1]
+
+[node name="SurferModel" instance=ExtResource( 1 )]

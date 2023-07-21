@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boy01_spec.jpg-815785baf611faba01b76d43dea2a024.stex"
+path="res://.import/Boy01_spec.jpg-1b5eb8288986751c0c762d1d862f439e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/track/obstacle/surfer/textures/Boy01_spec.jpg"
-dest_files=[ "res://.import/Boy01_spec.jpg-815785baf611faba01b76d43dea2a024.stex" ]
+source_file="res://main/track/obstacle/surfer/surfers/textures/subway_surfer_running/textures/Boy01_spec.jpg"
+dest_files=[ "res://.import/Boy01_spec.jpg-1b5eb8288986751c0c762d1d862f439e.stex" ]
 
 [params]
 
