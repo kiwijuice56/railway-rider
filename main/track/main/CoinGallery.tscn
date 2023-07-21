@@ -40,20 +40,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.46466 )
 
 [node name="Collectables" type="Spatial" parent="."]
 
-[node name="CollectableSpawner6" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, 4.88513 )
-
 [node name="CollectableSpawner7" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, 7.38495 )
 
-[node name="CollectableSpawner8" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, 9.88495 )
-
 [node name="CollectableSpawner9" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, 4.88513 )
-
-[node name="CollectableSpawner10" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, 7.38495 )
 
 [node name="CollectableSpawner11" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, 9.88495 )
@@ -61,35 +52,17 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, 9.88495 )
 [node name="CollectableSpawner15" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, -2.53247 )
 
-[node name="CollectableSpawner16" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, -0.0326514 )
-
 [node name="CollectableSpawner17" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, 2.46735 )
-
-[node name="CollectableSpawner18" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, -2.53247 )
 
 [node name="CollectableSpawner19" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, -0.0326514 )
 
-[node name="CollectableSpawner20" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, 2.46735 )
-
-[node name="CollectableSpawner24" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, -10.1418 )
-
 [node name="CollectableSpawner25" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, -7.64194 )
 
-[node name="CollectableSpawner26" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.98491, 0, -5.14194 )
-
 [node name="CollectableSpawner27" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, -10.1418 )
-
-[node name="CollectableSpawner28" parent="Collectables" instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, -7.64194 )
 
 [node name="CollectableSpawner29" parent="Collectables" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96409, 0, -5.14194 )

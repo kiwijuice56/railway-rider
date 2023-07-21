@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://main/track/props/FloorLaneModel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/track/obstacle/pole/Pole.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/track/collectable/CollectableSpawner.tscn" type="PackedScene" id=4]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4.5, 0.8, 12 )
+
+[node name="Basic" type="Spatial"]
+
+[node name="CollectableSpawner" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0689044, 0, 1.93921 )
+
+[node name="CollectableSpawner3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0689044, 0, 4.10841 )
+
+[node name="CollectableSpawner5" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0689044, 0, 6.22494 )
+
+[node name="CollectableSpawner7" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0689044, 0, 0.136671 )
+
+[node name="CollectableSpawner9" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0689044, 0, -2.08965 )
+
+[node name="FloorLane" parent="." instance=ExtResource( 1 )]
+
+[node name="FloorLane2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97971, 0, 0 )
+
+[node name="FloorLane3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97784, 0, 0 )
+
+[node name="Pole" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.10062, -0.867134, 8.58192 )
+
+[node name="Pole2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -1, 0, 0, 0, 1, 0, 0, 0, 1, 3.87013, -0.867134, -5.10626 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679, 0 )
+shape = SubResource( 1 )

@@ -16,7 +16,7 @@ size = Vector3( 256, 0.2, 256 )
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
-initial_speed = 15.0
+initial_speed = 16.0
 max_speed = 48.0
 render_distance = 9
 
@@ -52,9 +52,13 @@ skeleton = NodePath("../..")
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
 volume_db = -14.0
+autoplay = true
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.508283, 0 )
 visible = false
 opacity = 0.38
 texture = ExtResource( 5 )
+
+[node name="TitleCamera" type="Camera" parent="."]
+transform = Transform( 0.823711, 0, -0.56701, 0, 1, 0, 0.56701, 0, 0.823711, -4.238, 2.53, 3.157 )

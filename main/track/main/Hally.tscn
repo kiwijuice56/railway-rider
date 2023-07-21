@@ -1,0 +1,150 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://main/track/obstacle/train/Train.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/track/collectable/CollectableSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/track/props/FloorLaneModel.tscn" type="PackedScene" id=4]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4.5, 0.8, 12 )
+
+[node name="TrainJump" type="Spatial"]
+
+[node name="FloorLane" parent="." instance=ExtResource( 4 )]
+
+[node name="rail011" parent="FloorLane" index="0"]
+visible = false
+
+[node name="rail010" parent="FloorLane" index="1"]
+visible = false
+
+[node name="rail009" parent="FloorLane" index="2"]
+visible = false
+
+[node name="rail006" parent="FloorLane" index="5"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, 10.9857 )
+
+[node name="rail005" parent="FloorLane" index="6"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -11.0143 )
+
+[node name="rail004" parent="FloorLane" index="7"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -9.01432 )
+visible = false
+
+[node name="rail003" parent="FloorLane" index="8"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -7.01432 )
+visible = false
+
+[node name="rail002" parent="FloorLane" index="9"]
+visible = false
+
+[node name="rail001" parent="FloorLane" index="10"]
+visible = false
+
+[node name="rail" parent="FloorLane" index="11"]
+visible = false
+
+[node name="FloorLane2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97971, 0, 0 )
+
+[node name="rail011" parent="FloorLane2" index="0"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, 0.985681 )
+
+[node name="rail010" parent="FloorLane2" index="1"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, 2.98568 )
+
+[node name="rail009" parent="FloorLane2" index="2"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, 4.98568 )
+
+[node name="rail008" parent="FloorLane2" index="3"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, 6.98568 )
+
+[node name="rail007" parent="FloorLane2" index="4"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, 8.98568 )
+
+[node name="rail006" parent="FloorLane2" index="5"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, 10.9857 )
+
+[node name="rail005" parent="FloorLane2" index="6"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -11.0143 )
+
+[node name="rail004" parent="FloorLane2" index="7"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -9.01432 )
+
+[node name="rail003" parent="FloorLane2" index="8"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -7.01432 )
+
+[node name="rail002" parent="FloorLane2" index="9"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -5.01432 )
+
+[node name="rail001" parent="FloorLane2" index="10"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -3.01432 )
+
+[node name="rail" parent="FloorLane2" index="11"]
+transform = Transform( -7.54979e-08, 1.61228e-16, -0.0858148, -8.74228e-08, -0.0244276, 0, -1, 2.13553e-09, 6.47883e-09, 0, 0.0672249, -1.01432 )
+
+[node name="FloorLane3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97784, 0, 0 )
+
+[node name="Train5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115643, 0, 4.22601 )
+
+[node name="Train6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115643, 2.11914, -4.71902 )
+
+[node name="Train7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115643, 0, 1.12154 )
+
+[node name="Train9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115643, 0, -1.77763 )
+
+[node name="Train10" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115643, 0, -4.66475 )
+
+[node name="Train11" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115643, 0, -7.57158 )
+
+[node name="Train8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115643, 2.11914, -7.59166 )
+
+[node name="Collectables" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )
+
+[node name="CollectableSpawner3" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158375, 4.45453, 3.57533 )
+
+[node name="CollectableSpawner4" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158375, 4.45453, 6.07513 )
+
+[node name="CollectableSpawner5" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.158375, 4.45453, 8.57513 )
+
+[node name="CollectableSpawner6" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173485, 4.45453, 4.82573 )
+
+[node name="CollectableSpawner7" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.173485, 4.45453, 7.32555 )
+
+[node name="CollectableSpawner8" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170487, 2.32812, -4.59355 )
+
+[node name="CollectableSpawner9" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170487, 2.32812, -2.09375 )
+
+[node name="CollectableSpawner10" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170487, 2.32812, 0.406247 )
+
+[node name="CollectableSpawner11" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.185597, 2.32812, -3.34315 )
+
+[node name="CollectableSpawner12" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.185597, 2.32812, -0.843333 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679113, 0 )
+shape = SubResource( 1 )
+
+[editable path="FloorLane"]
+[editable path="FloorLane2"]

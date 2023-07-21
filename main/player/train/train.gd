@@ -1,8 +1,8 @@
 class_name Train
 extends KinematicBody
 
-const GRAVITY: Vector3 = Vector3(0, -24.0, 0)
-const JUMP: Vector3 = Vector3(0, 12.0, 0)
+const GRAVITY: Vector3 = Vector3(0, -32.0, 0)
+const JUMP: Vector3 = Vector3(0, 15.0, 0)
 
 signal landed
 

@@ -52,6 +52,7 @@ func _process(_delta: float) -> void:
 		lane = old_lane
 
 func _on_train_landed() -> void:
+	$CrashPlayer.pitch_scale = rand_range(0.8, 1.1)
 	$CrashPlayer.play()
 	$Camera.shake(0.25, 40, 0.2)
 
