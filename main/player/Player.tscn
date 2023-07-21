@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://main/player/player.gd" type="Script" id=1]
 [ext_resource path="res://main/player/train/Train.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://main/player/screen_shake_camera.gd" type="Script" id=6]
 [ext_resource path="res://main/player/sounds/crash.wav" type="AudioStream" id=7]
 [ext_resource path="res://main/player/sounds/creak.wav" type="AudioStream" id=8]
+[ext_resource path="res://main/player/sounds/explosion.ogg" type="AudioStream" id=9]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -112,6 +113,254 @@ tracks/8/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ false ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Train/TrainModel/body:translation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+tracks/10/type = "bezier"
+tracks/10/path = NodePath("Train/TrainModel/body:translation:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/11/type = "bezier"
+tracks/11/path = NodePath("Train/TrainModel/body:translation:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/12/type = "bezier"
+tracks/12/path = NodePath("Train/TrainModel/body:translation:z")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/13/type = "bezier"
+tracks/13/path = NodePath("Train/TrainModel/body:rotation_degrees:x")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/14/type = "bezier"
+tracks/14/path = NodePath("Train/TrainModel/body:rotation_degrees:y")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/15/type = "bezier"
+tracks/15/path = NodePath("Train/TrainModel/body:rotation_degrees:z")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/16/type = "bezier"
+tracks/16/path = NodePath("Train/TrainModel/body:scale:x")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/keys = {
+"points": PoolRealArray( 0.792053, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/17/type = "bezier"
+tracks/17/path = NodePath("Train/TrainModel/body:scale:y")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/keys = {
+"points": PoolRealArray( 0.777978, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/18/type = "bezier"
+tracks/18/path = NodePath("Train/TrainModel/body:scale:z")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/keys = {
+"points": PoolRealArray( 0.802703, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/19/type = "value"
+tracks/19/path = NodePath("Train/TrainModel/wheel005:translation")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.558946, -0.910415, -0.929504 ) ]
+}
+tracks/20/type = "value"
+tracks/20/path = NodePath("Train/TrainModel/wheel004:translation")
+tracks/20/interp = 1
+tracks/20/loop_wrap = true
+tracks/20/imported = false
+tracks/20/enabled = true
+tracks/20/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.558946, -0.910415, -0.000338592 ) ]
+}
+tracks/21/type = "value"
+tracks/21/path = NodePath("Train/TrainModel/wheel003:translation")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( -0.558946, -0.910415, 0.915005 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("Train/TrainModel/wheel002:translation")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.571959, -0.910415, -0.929504 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("Train/TrainModel/wheel001:translation")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.571959, -0.910415, -0.000338592 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("Train/TrainModel/wheel:translation")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0.571959, -0.910415, 0.915005 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "death"
+length = 1.5
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Train/TrainModel/body:translation:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Train/TrainModel/body:rotation_degrees:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Train/TrainModel/body:rotation_degrees:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0, 720, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Train/TrainModel/body:rotation_degrees:z")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Train/TrainModel/body:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 0.792053, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Train/TrainModel/body:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 0.777978, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Train/TrainModel/body:scale:z")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 0.802703, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.5 )
 }
 
 [sub_resource type="Animation" id=4]
@@ -392,6 +641,7 @@ script = ExtResource( 6 )
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 playback_speed = 2.5
 anims/RESET = SubResource( 1 )
+anims/death = SubResource( 7 )
 anims/flip_left = SubResource( 4 )
 anims/flip_right = SubResource( 5 )
 anims/jump = SubResource( 6 )
@@ -420,4 +670,13 @@ stream = ExtResource( 5 )
 volume_db = -16.0
 autoplay = true
 
+[node name="ExplosionStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 9 )
+volume_db = -13.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [editable path="Train"]
+[editable path="Train/TrainModel"]

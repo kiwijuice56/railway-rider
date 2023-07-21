@@ -1,37 +1,51 @@
 class_name Player
 extends Spatial
+# Controls player movement
 
+signal died
+
+const CAMERA_Y: float = 4.9
+const CAMERA_SHIFT_THRESHOLD: float = 1.6
+const CAMERA_SHIFT: float = 2.0
+
+# Player parameters
 export var lane_offset: float = 0.8
 export var switch_time: float = 0.12
 export var cam_switch_time: float = 0.21
 
 var lane: int = 0
+var dead: bool = false
+var vel: Dictionary = {}
 
 func _ready() -> void:
 # warning-ignore:return_value_discarded
 	$Train.connect("landed", self, "_on_train_landed")
 
-func _process(_delta: float) -> void:
-	# Sync camera y when on a platform
-	if $Train.translation.y > 1.5 and $Camera.translation.y <= 4.9:
+func _process(delta: float) -> void:
+	# On death, shoot out train parts
+	if dead:
+		for mesh in $Train/TrainModel.get_children():
+			if not mesh is MeshInstance:
+				continue
+			mesh.translation += vel[mesh] * delta * 32
+		return
+	
+	# Sync camera's y position
+	if $Train.translation.y > CAMERA_SHIFT_THRESHOLD and $Camera.translation.y <= CAMERA_Y:
 		$Camera/Tween.interpolate_property($Camera, "original_translation:y", null, 
-		4.9 + 2.0, cam_switch_time, 
+		CAMERA_Y + CAMERA_SHIFT, cam_switch_time, 
 		Tween.TRANS_QUAD, Tween.EASE_OUT)
-		
 		$Camera/Tween.interpolate_property($Camera, "translation:y", null, 
-		4.9 + 2.0, cam_switch_time, 
+		CAMERA_Y + CAMERA_SHIFT, cam_switch_time, 
 		Tween.TRANS_QUAD, Tween.EASE_OUT)
-		
 		$Camera/Tween.start()
-	if $Train.translation.y < 1.5 and $Camera.translation.y >= 4.9:
+	if $Train.translation.y < CAMERA_SHIFT_THRESHOLD and $Camera.translation.y >= CAMERA_Y:
 		$Camera/Tween.interpolate_property($Camera, "original_translation:y", null, 
-		4.9, cam_switch_time, 
+		CAMERA_Y, cam_switch_time, 
 		Tween.TRANS_QUAD, Tween.EASE_OUT)
-		
 		$Camera/Tween.interpolate_property($Camera, "translation:y", null, 
-		4.9, cam_switch_time, 
+		CAMERA_Y, cam_switch_time, 
 		Tween.TRANS_QUAD, Tween.EASE_OUT)
-		
 		$Camera/Tween.start()
 	
 	if not $Tween.is_active() and Input.is_action_pressed("jump") and $Train.is_on_floor():
@@ -85,3 +99,26 @@ func switch_lane(old_lane: int) -> void:
 	Tween.TRANS_QUAD, Tween.EASE_OUT)
 	
 	$Tween.start()
+
+func reset() -> void:
+	dead = false
+	$Train.translation.y = 1.216
+	$AnimationPlayer.play("RESET")
+	$Train/CollisionShape.call_deferred("set", "disabled", false)
+
+func death() -> void:
+	$ExplosionStreamPlayer.playing = true
+	$Camera.shake(0.65, 60, 0.3)
+	
+	for mesh in $Train/TrainModel.get_children():
+		if not mesh is MeshInstance:
+			continue
+		vel[mesh] = Vector3(2 * randf() - 1.0, randf() + 0.2, 2 * randf() - 1.0).normalized()
+	
+	dead = true
+	
+	$Train/CollisionShape.call_deferred("set", "disabled", true)
+	$Timer.start()
+	yield($Timer, "timeout")
+	
+	emit_signal("died")

@@ -80,7 +80,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="godot-train-jaim"
+config/name="railway-rider"
 run/main_scene="res://main/Main.tscn"
 config/icon="res://icon.png"
 
@@ -90,7 +90,6 @@ GlobalState="*res://main/global_state.gd"
 
 [debug]
 
-settings/stdout/print_fps=true
 gdscript/warnings/unused_signal=false
 
 [display]

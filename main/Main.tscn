@@ -18,6 +18,7 @@ size = Vector3( 256, 0.2, 256 )
 script = ExtResource( 1 )
 initial_speed = 16.0
 max_speed = 48.0
+accel = 0.002
 render_distance = 9
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
@@ -61,4 +62,4 @@ opacity = 0.38
 texture = ExtResource( 5 )
 
 [node name="TitleCamera" type="Camera" parent="."]
-transform = Transform( 0.823711, 0, -0.56701, 0, 1, 0, 0.56701, 0, 0.823711, -4.238, 2.53, 3.157 )
+transform = Transform( 0.826747, 0, -0.562574, 0, 1, 0, 0.562574, 0, 0.826747, -4.031, 2.862, 4.549 )
