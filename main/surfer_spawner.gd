@@ -24,7 +24,8 @@ func _physics_process(delta):
 		
 		
 		var surfer = runners[randi() % runners.size()].instance()
-		surfer.speed = 10 + randi()%10 + get_parent().speed
+		# TODO: Add if condition for flyers
+		surfer.speed += get_parent().speed
 
 		add_child(surfer)
 
