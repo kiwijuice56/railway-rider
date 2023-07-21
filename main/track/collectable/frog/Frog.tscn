@@ -315,6 +315,9 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.748968, 0 )
 [node name="frog" parent="FrogModel" index="0"]
 transform = Transform( 0.640466, 0, 0, 0, 0.640466, 0, 0, 0, 0.640466, -0.00580767, -0.149056, 0.0686485 )
 
+[node name="bottle" parent="FrogModel" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+
 [node name="CollisionShape" parent="." index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748968, 0 )
 shape = SubResource( 3 )
