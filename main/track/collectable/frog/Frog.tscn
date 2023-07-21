@@ -186,7 +186,7 @@ tracks/16/keys = {
 
 [sub_resource type="Animation" id=2]
 resource_name = "collect"
-length = 0.5
+length = 0.6
 tracks/0/type = "bezier"
 tracks/0/path = NodePath("FrogModel/frog:translation:x")
 tracks/0/interp = 1
@@ -266,8 +266,8 @@ tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"points": PoolRealArray( 0.640466, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0.3, 0.5 )
+"points": PoolRealArray( 0.640466, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
 }
 tracks/8/type = "bezier"
 tracks/8/path = NodePath("FrogModel/frog:scale:y")
@@ -276,8 +276,8 @@ tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"points": PoolRealArray( 0.640466, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0.3, 0.5 )
+"points": PoolRealArray( 0.640466, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
 }
 tracks/9/type = "bezier"
 tracks/9/path = NodePath("FrogModel/frog:scale:z")
@@ -286,8 +286,8 @@ tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"points": PoolRealArray( 0.640466, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
-"times": PoolRealArray( 0.3, 0.5 )
+"points": PoolRealArray( 0.640466, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.3, 0.6 )
 }
 
 [sub_resource type="Animation" id=4]

@@ -6,8 +6,8 @@ extends Spatial
 var collectables: Array = [
 	preload("res://main/track/collectable/coin/Coin.tscn"),
 	preload("res://main/track/collectable/frog/Frog.tscn")
-	] 
-var rarities: Array = [0.95, 0.05]
+] 
+var rarities: Array = [0.99, 0.05]
 
 func _ready() -> void:
 	for i in range(len(collectables)):

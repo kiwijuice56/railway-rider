@@ -83,6 +83,7 @@ func load_scenes(path: String, array: Array) -> void:
 # Reset game to initial state
 func reset() -> void:
 	paused = false
+	GlobalState.score = 0
 	
 	$Player.reset()
 	

@@ -5,8 +5,8 @@
       <author>Blender User</author>
       <authoring_tool>Blender 3.2.0 commit date:2022-06-08, commit time:10:22, hash:e05e1e369187</authoring_tool>
     </contributor>
-    <created>2023-07-20T23:45:35</created>
-    <modified>2023-07-20T23:45:35</modified>
+    <created>2023-07-20T23:51:51</created>
+    <modified>2023-07-20T23:51:51</modified>
     <unit name="meter" meter="1"/>
     <up_axis>Z_UP</up_axis>
   </asset>
@@ -377,7 +377,7 @@
         </node>
       </node>
       <node id="bottle" name="bottle" type="NODE">
-        <matrix sid="transform">1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1</matrix>
+        <matrix sid="transform">0.8639765 0 0 0 0 0.8639765 0 0 0 0 0.8639765 0 0 0 0 1</matrix>
         <instance_geometry url="#Cylinder_001-mesh" name="bottle">
           <bind_material>
             <technique_common>

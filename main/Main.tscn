@@ -17,8 +17,7 @@ size = Vector3( 256, 0.2, 256 )
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
 initial_speed = 16.0
-max_speed = 48.0
-accel = 0.002
+accel = 0.003
 render_distance = 9
 
 [node name="Player" parent="." instance=ExtResource( 2 )]

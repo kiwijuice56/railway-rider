@@ -20,6 +20,7 @@ var vel: Dictionary = {}
 func _ready() -> void:
 # warning-ignore:return_value_discarded
 	$Train.connect("landed", self, "_on_train_landed")
+# warning-ignore:return_value_discarded
 	$JumpBoostTimer.connect("timeout", self, "_on_jump_boost_timeout")
 
 func _process(delta: float) -> void:
