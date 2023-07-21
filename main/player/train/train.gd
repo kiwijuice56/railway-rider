@@ -3,10 +3,12 @@ extends KinematicBody
 
 const GRAVITY: Vector3 = Vector3(0, -32.0, 0)
 const JUMP: Vector3 = Vector3(0, 15.0, 0)
+const JUMP_BOOST: Vector3 = Vector3(0, 23.0, 0)
 
 signal landed
 
 var velocity: Vector3
+var boosted: bool = false
 
 func _physics_process(delta: float) -> void:
 	velocity += GRAVITY * delta
@@ -21,4 +23,4 @@ func _physics_process(delta: float) -> void:
 
 func jump() -> void:
 	velocity.y = 0
-	velocity += JUMP
+	velocity += JUMP_BOOST if boosted else JUMP

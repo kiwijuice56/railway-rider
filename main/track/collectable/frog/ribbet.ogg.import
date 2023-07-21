@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ribbet.ogg-ea1a25ea7d234526b5e8e45f45e012ea.oggstr"
+
+[deps]
+
+source_file="res://main/track/collectable/frog/ribbet.ogg"
+dest_files=[ "res://.import/ribbet.ogg-ea1a25ea7d234526b5e8e45f45e012ea.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

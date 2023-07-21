@@ -20,6 +20,7 @@ var vel: Dictionary = {}
 func _ready() -> void:
 # warning-ignore:return_value_discarded
 	$Train.connect("landed", self, "_on_train_landed")
+	$JumpBoostTimer.connect("timeout", self, "_on_jump_boost_timeout")
 
 func _process(delta: float) -> void:
 	# On death, shoot out train parts
@@ -70,6 +71,9 @@ func _on_train_landed() -> void:
 	$CrashPlayer.play()
 	$Camera.shake(0.25, 40, 0.2)
 
+func _on_jump_boost_timeout() -> void:
+	$Train.boosted = false
+
 func switch_lane(old_lane: int) -> void:
 	# Add some variation to most common sound
 	$SwooshPlayer.pitch_scale = rand_range(0.7, 1.2)
@@ -105,6 +109,7 @@ func reset() -> void:
 	$Train.translation.y = 1.216
 	$AnimationPlayer.play("RESET")
 	$Train/CollisionShape.call_deferred("set", "disabled", false)
+	_on_jump_boost_timeout()
 
 func death() -> void:
 	$ExplosionStreamPlayer.playing = true
@@ -122,3 +127,7 @@ func death() -> void:
 	yield($Timer, "timeout")
 	
 	emit_signal("died")
+
+func jump_boost() -> void:
+	$JumpBoostTimer.start()
+	$Train.boosted = true
