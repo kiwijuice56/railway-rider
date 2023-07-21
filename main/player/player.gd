@@ -4,8 +4,8 @@ extends Spatial
 
 signal died
 
-const CAMERA_Y: float = 4.9
-const CAMERA_SHIFT_THRESHOLD: float = 1.6
+const CAMERA_Y: float = 5.1
+const CAMERA_SHIFT_THRESHOLD: float = 1.5
 const CAMERA_SHIFT: float = 2.0
 
 # Player parameters
@@ -33,12 +33,12 @@ func _process(delta: float) -> void:
 		return
 	
 	# Sync camera's y position
-	if $Train.translation.y > CAMERA_SHIFT_THRESHOLD and $Camera.translation.y <= CAMERA_Y:
+	if Input.is_action_pressed("jump"):
 		$Camera/Tween.interpolate_property($Camera, "original_translation:y", null, 
-		CAMERA_Y + CAMERA_SHIFT, cam_switch_time, 
+		CAMERA_Y + CAMERA_SHIFT * (2 if $Train.boosted else 1), cam_switch_time, 
 		Tween.TRANS_QUAD, Tween.EASE_OUT)
 		$Camera/Tween.interpolate_property($Camera, "translation:y", null, 
-		CAMERA_Y + CAMERA_SHIFT, cam_switch_time, 
+		CAMERA_Y + CAMERA_SHIFT * (2 if $Train.boosted else 1), cam_switch_time, 
 		Tween.TRANS_QUAD, Tween.EASE_OUT)
 		$Camera/Tween.start()
 	if $Train.translation.y < CAMERA_SHIFT_THRESHOLD and $Camera.translation.y >= CAMERA_Y:

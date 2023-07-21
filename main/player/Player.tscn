@@ -621,7 +621,7 @@ script = ExtResource( 1 )
 lane_offset = 3.0
 
 [node name="Train" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.216, 0 )
+transform = Transform( 0.955, 0, 0, 0, 0.945, 0, 0, 0, 0.748, 0, 1.216, 0 )
 
 [node name="wheel005" parent="Train/TrainModel" index="0"]
 transform = Transform( 1.46249, 0, 0, 0, 1.46249, 0, 0, 0, 1.46249, -0.558946, -0.910415, -0.929504 )
@@ -650,7 +650,7 @@ visible = false
 current = true
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.913545, 0.406737, 0, -0.406737, 0.913545, 0, 4.9, 4.9 )
+transform = Transform( 1, 0, 0, 0, 0.913545, 0.406737, 0, -0.406737, 0.913545, 0, 5.1, 4.9 )
 current = true
 far = 159.1
 script = ExtResource( 6 )
