@@ -17,6 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
 	if randf() < obstacle_frequency/float(3000):
 		var x = randi()%3
 		var y = randi()%2

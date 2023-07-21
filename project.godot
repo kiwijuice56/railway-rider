@@ -57,7 +57,7 @@ _global_script_classes=[ {
 "base": "Obstacle",
 "class": "Surfer",
 "language": "GDScript",
-"path": "res://main/track/obstacle/surfer/surfer.gd"
+"path": "res://main/track/obstacle/surfer/running_subway_surfer.gd"
 }, {
 "base": "KinematicBody",
 "class": "Train",
