@@ -12,7 +12,7 @@ export var switch_time: float = 0.3
 var lane: int = 0
 var velocity: Vector3
 var dead: bool = false
-
+var just_jumped: bool = false
 
 func _ready() -> void:
 	lane = randi() % 2 - 1
@@ -27,7 +27,6 @@ func _ready() -> void:
 	$HitArea.connect("body_entered", self, "_on_player_hit")
 
 func _physics_process(delta: float) -> void:
-	var anim: AnimationPlayer = $SurferModel.get_child(0).get_node("AnimationPlayer")	
 	if dead:
 		velocity.y -= delta * 32 
 		translation += velocity * delta
@@ -35,12 +34,14 @@ func _physics_process(delta: float) -> void:
 		rotation_degrees.z += 64 * delta
 		rotation_degrees.z += 64 * delta
 		return
-	
+	var anim: AnimationPlayer = $SurferModel.get_child(0).get_node("AnimationPlayer")
 	if is_on_wall():
 		death()
 	if is_on_floor():
-		anim.play()
-
+		if not just_jumped:
+			anim.play()
+		else:
+			just_jumped = false
 
 func _on_player_hit(body: PhysicsBody) -> void:
 	body.get_parent().kill()
@@ -51,10 +52,10 @@ func _on_player_hit(body: PhysicsBody) -> void:
 	death()
 
 func jump() -> void:
+	just_jumped = true
 	var anim: AnimationPlayer = $SurferModel.get_child(0).get_node("AnimationPlayer")
 	
 	$SwooshPlayer.play()
-
 	if $SurferModel.get_child(0).has_node("Jump"):
 		anim.stop(false)
 		$SurferModel.get_child(0).get_node("Jump").play("default")
