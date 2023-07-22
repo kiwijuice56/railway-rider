@@ -76,6 +76,7 @@ seconds_per_spawn = 1.0
 seconds_per_spawn_range = 0.5
 
 [node name="Timer" type="Timer" parent="SurferSpawner"]
+wait_time = 1.5
 one_shot = true
 
 [node name="Tween" type="Tween" parent="."]
