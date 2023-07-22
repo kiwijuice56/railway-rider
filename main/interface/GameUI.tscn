@@ -1,8 +1,28 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://main/interface/GameUI.gd" type="Script" id=2]
 [ext_resource path="res://main/interface/icon_small.png" type="Texture" id=11]
 [ext_resource path="res://main/theme/theme.tres" type="Theme" id=14]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0.772549, 0, 1 )
+border_width_top = 6
+border_color = Color( 0.45098, 0.337255, 0, 0 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 1, 0.772549, 0, 1 )
+border_width_bottom = 6
+border_color = Color( 0.45098, 0.337255, 0, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
@@ -24,6 +44,8 @@ margin_bottom = 40.0
 margin_right = 32.0
 margin_bottom = 32.0
 focus_mode = 0
+custom_styles/pressed = SubResource( 1 )
+custom_styles/normal = SubResource( 2 )
 enabled_focus_mode = 0
 icon = ExtResource( 11 )
 
