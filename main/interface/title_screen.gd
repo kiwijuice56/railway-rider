@@ -3,7 +3,9 @@ extends Control
 
 func _ready() -> void:
 	get_node("../GameUI").modulate.a = 0
+# warning-ignore:return_value_discarded
 	get_node("%PlayButton").connect("button_up", self, "_on_play_pressed")
+# warning-ignore:return_value_discarded
 	get_node("%CreditButton").connect("button_up", self, "_on_credit_pressed")
 
 func _on_play_pressed() -> void:

@@ -7,6 +7,7 @@ func _ready() -> void:
 	get_node("%BackButton").disabled = true
 	visible = false
 	
+# warning-ignore:return_value_discarded
 	get_node("%BackButton").connect("button_up", self, "_on_back_pressed")
 
 func _on_back_pressed() -> void:

@@ -3,6 +3,7 @@ extends Control
 
 
 func _ready() -> void:
+# warning-ignore:return_value_discarded
 	GlobalState.connect("values_changed", self, "_on_values_changed")
 
 func pause():
