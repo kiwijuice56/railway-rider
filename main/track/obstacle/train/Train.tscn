@@ -69,7 +69,7 @@ surfaces/3 = {
 }
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.79, 0.645, 1.292 )
+extents = Vector3( 0.934, 1.053, 1.372 )
 
 [sub_resource type="BoxShape" id=2]
 extents = Vector3( 0.8, 1.375, 1.311 )
@@ -90,6 +90,7 @@ mesh = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34093, 0 )
 
 [node name="CollisionShape" parent="KillArea" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.167157, 0 )
 shape = SubResource( 1 )
 
 [node name="KinematicBody" type="KinematicBody" parent="." index="2"]

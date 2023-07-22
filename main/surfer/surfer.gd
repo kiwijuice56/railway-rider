@@ -29,11 +29,11 @@ func _physics_process(delta: float) -> void:
 	if randf() < 0.002 and not $Left.is_colliding() and not $Tween.is_active() and lane > -1:
 		var old_lane: int = lane
 		lane -= 1
-		switch_lane(old_lane)
+		#switch_lane(old_lane)
 	if randf() < 0.002 and not $Right.is_colliding() and not $Tween.is_active() and lane < 1:
 		var old_lane: int = lane
 		lane += 1
-		switch_lane(old_lane)
+		#switch_lane(old_lane)
 	
 	if is_on_floor():
 		velocity.z = speed 
@@ -48,6 +48,10 @@ func _physics_process(delta: float) -> void:
 func jump() -> void:
 	velocity += JUMP
 
+func death() -> void:
+	call_deferred("queue_free")
+
+# warning-ignore:unused_argument
 func switch_lane(old_lane: int) -> void:
 	#var dir: String = "left" if old_lane > lane else "right"
 	#$AnimationPlayer.play("turn_" + dir + "_surfer")

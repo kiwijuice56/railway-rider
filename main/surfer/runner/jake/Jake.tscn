@@ -4,7 +4,7 @@
 [ext_resource path="res://main/surfer/runner/jake/JakeModel.tscn" type="PackedScene" id=2]
 
 [sub_resource type="BoxShape" id=1]
-extents = Vector3( 0.8, 1, 1 )
+extents = Vector3( 0.57, 1, 0.804 )
 
 [node name="Jake" instance=ExtResource( 1 )]
 
@@ -13,7 +13,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.019, 0 )
 shape = SubResource( 1 )
 
 [node name="JakeModel" parent="SurferModel" index="0" instance=ExtResource( 2 )]
-transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0 )
 
 [node name="AnimationPlayer" parent="." index="7"]
 playback_speed = 1.0
