@@ -16,6 +16,7 @@ export var cam_switch_time: float = 0.21
 var lane: int = 0
 var dead: bool = false
 var vel: Dictionary = {}
+var first_land: bool = false
 
 func _ready() -> void:
 # warning-ignore:return_value_discarded
@@ -72,6 +73,10 @@ func _process(delta: float) -> void:
 		lane = old_lane
 
 func _on_train_landed() -> void:
+	if first_land:
+		first_land = false
+		return
+	
 	$CrashPlayer.pitch_scale = rand_range(0.8, 1.1)
 	$CrashPlayer.play()
 	$Camera.shake(0.25, 40, 0.2)
@@ -130,6 +135,7 @@ func reset() -> void:
 	set_process(false)
 	
 	dead = false
+	first_land = true
 	$Train.translation.y = 1.3
 	$Train/CollisionShape.call_deferred("set", "disabled", false)
 	$AnimationPlayer.stop()
