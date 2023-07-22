@@ -1,48 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://main/interface/GameUI.gd" type="Script" id=2]
-[ext_resource path="res://main/interface/icon_small.png" type="Texture" id=11]
 [ext_resource path="res://main/theme/theme.tres" type="Theme" id=14]
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 1, 0.594, 0.13, 0.0784314 )
-border_width_top = 3
-border_color = Color( 1, 0.6, 0.129412, 1 )
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 20
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 1, 0.6, 0.129412, 1 )
-border_width_bottom = 6
-border_color = Color( 0.901961, 0.470588, 0.121569, 1 )
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 20
-
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 0.6, 0.129412, 1 )
-border_width_top = 6
-border_color = Color( 0.45098, 0.337255, 0, 0 )
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 20
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 1, 0.6, 0.129412, 1 )
-border_width_bottom = 6
-border_color = Color( 0.9, 0.47, 0.12, 1 )
-corner_radius_top_left = 6
-corner_radius_top_right = 6
-corner_radius_bottom_right = 6
-corner_radius_bottom_left = 6
-corner_detail = 20
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
@@ -57,72 +16,26 @@ script = ExtResource( 2 )
 [node name="ContentPanel" type="Panel" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -147.0
-margin_bottom = 80.0
-custom_styles/panel = SubResource( 3 )
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ContentPanel"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -66.0
-margin_top = -34.0
-margin_right = 66.0
-margin_bottom = 34.0
-
-[node name="ScoreContainer" type="HBoxContainer" parent="ContentPanel/VBoxContainer"]
-margin_right = 132.0
-margin_bottom = 32.0
-
-[node name="TextureRect" type="TextureRect" parent="ContentPanel/VBoxContainer/ScoreContainer"]
-margin_right = 32.0
-margin_bottom = 32.0
-texture = ExtResource( 11 )
-
-[node name="Label" type="Label" parent="ContentPanel/VBoxContainer/ScoreContainer"]
-margin_left = 36.0
-margin_top = 5.0
-margin_right = 132.0
-margin_bottom = 27.0
-text = "00000000"
-
-[node name="CoinsContainer" type="HBoxContainer" parent="ContentPanel/VBoxContainer"]
-margin_top = 36.0
-margin_right = 132.0
-margin_bottom = 68.0
-
-[node name="TextureRect" type="TextureRect" parent="ContentPanel/VBoxContainer/CoinsContainer"]
-margin_right = 32.0
-margin_bottom = 32.0
-texture = ExtResource( 11 )
-
-[node name="CoinsLabel" type="Label" parent="ContentPanel/VBoxContainer/CoinsContainer"]
-margin_left = 36.0
-margin_top = 5.0
-margin_right = 132.0
-margin_bottom = 27.0
-text = "00000000"
+margin_left = -40.0
+margin_bottom = 40.0
 
 [node name="PauseButton" type="Button" parent="."]
 margin_right = 32.0
 margin_bottom = 32.0
 focus_mode = 0
-custom_styles/hover = SubResource( 4 )
-custom_styles/pressed = SubResource( 1 )
-custom_styles/normal = SubResource( 2 )
 enabled_focus_mode = 0
 text = "i i"
 
 [node name="PauseMenu" type="VBoxContainer" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -35.0
-margin_top = -30.0
-margin_right = 35.0
-margin_bottom = 30.0
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
 margin_right = 70.0
@@ -134,7 +47,3 @@ margin_top = 32.0
 margin_right = 70.0
 margin_bottom = 60.0
 text = "Menu"
-
-[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="PauseMenu/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="PauseMenu/MenuButton" to="." method="_on_MenuButton_pressed"]
