@@ -1,25 +1,8 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://main/interface/pause_pressed.png" type="Texture" id=1]
 [ext_resource path="res://main/interface/GameUI.gd" type="Script" id=2]
-[ext_resource path="res://main/interface/pause_normal.png" type="Texture" id=3]
-[ext_resource path="res://main/interface/resume_normal.png" type="Texture" id=4]
-[ext_resource path="res://main/interface/resume_pressed.png" type="Texture" id=5]
-[ext_resource path="res://main/interface/menu_pressed.png" type="Texture" id=6]
-[ext_resource path="res://main/interface/resume_hover.png" type="Texture" id=7]
-[ext_resource path="res://main/interface/menu_hover.png" type="Texture" id=8]
-[ext_resource path="res://main/interface/menu_normal.png" type="Texture" id=9]
-[ext_resource path="res://main/interface/pause_hover.png" type="Texture" id=10]
 [ext_resource path="res://main/interface/icon_small.png" type="Texture" id=11]
-[ext_resource path="res://main/interface/KGRedHands.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://main/interface/panel_all_white.png" type="Texture" id=13]
 [ext_resource path="res://main/theme/theme.tres" type="Theme" id=14]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 12 )
-
-[sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 12 )
 
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
@@ -28,107 +11,39 @@ margin_left = 15.0
 margin_top = 15.0
 margin_right = -15.0
 margin_bottom = -15.0
+theme = ExtResource( 14 )
 script = ExtResource( 2 )
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-visible = false
+[node name="ContentPanel" type="Panel" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -136.0
-margin_bottom = 82.0
-texture = ExtResource( 13 )
-patch_margin_left = 16
-patch_margin_top = 16
-patch_margin_right = 16
-patch_margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -60.0
-margin_top = -34.0
-margin_right = 60.0
-margin_bottom = 34.0
-
-[node name="ScoreContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
-margin_right = 120.0
-margin_bottom = 32.0
-
-[node name="ScoreTexture" type="TextureRect" parent="NinePatchRect/VBoxContainer/ScoreContainer"]
-margin_right = 32.0
-margin_bottom = 32.0
-texture = ExtResource( 11 )
-
-[node name="ScoreLabel" type="Label" parent="NinePatchRect/VBoxContainer/ScoreContainer"]
-margin_left = 36.0
-margin_top = 5.0
-margin_right = 120.0
-margin_bottom = 27.0
-custom_fonts/font = SubResource( 1 )
-text = "0000000"
-
-[node name="CoinsContainer" type="HBoxContainer" parent="NinePatchRect/VBoxContainer"]
-margin_top = 36.0
-margin_right = 120.0
-margin_bottom = 68.0
-
-[node name="CoinsTexture" type="TextureRect" parent="NinePatchRect/VBoxContainer/CoinsContainer"]
-margin_right = 32.0
-margin_bottom = 32.0
-texture = ExtResource( 11 )
-
-[node name="CoinsLabel" type="Label" parent="NinePatchRect/VBoxContainer/CoinsContainer"]
-margin_left = 36.0
-margin_top = 5.0
-margin_right = 120.0
-margin_bottom = 27.0
-custom_fonts/font = SubResource( 2 )
-text = "0000000"
-
-[node name="PauseButton" type="TextureButton" parent="."]
-visible = false
-margin_right = 32.0
-margin_bottom = 32.0
-texture_normal = ExtResource( 3 )
-texture_pressed = ExtResource( 1 )
-texture_hover = ExtResource( 10 )
-
-[node name="PauseContainer" type="VBoxContainer" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -128.0
-margin_top = -66.0
-margin_right = 128.0
-margin_bottom = 66.0
-
-[node name="ResumeButton" type="TextureButton" parent="PauseContainer"]
-margin_right = 256.0
-margin_bottom = 64.0
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 5 )
-texture_hover = ExtResource( 7 )
-
-[node name="MenuButton" type="TextureButton" parent="PauseContainer"]
-margin_top = 68.0
-margin_right = 256.0
-margin_bottom = 132.0
-texture_normal = ExtResource( 9 )
-texture_pressed = ExtResource( 6 )
-texture_hover = ExtResource( 8 )
-
-[node name="Button" type="Button" parent="."]
-margin_right = 100.0
+margin_left = -40.0
 margin_bottom = 40.0
-focus_mode = 0
-theme = ExtResource( 14 )
-enabled_focus_mode = 0
-text = "Button"
 
-[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]
-[connection signal="pressed" from="PauseContainer/ResumeButton" to="." method="_on_ResumeButton_pressed"]
-[connection signal="pressed" from="PauseContainer/MenuButton" to="." method="_on_MenuButton_pressed"]
+[node name="PauseButton" type="Button" parent="."]
+margin_right = 32.0
+margin_bottom = 32.0
+focus_mode = 0
+enabled_focus_mode = 0
+icon = ExtResource( 11 )
+
+[node name="PauseMenu" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -20.0
+margin_top = -20.0
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="ResumeButton" type="Button" parent="PauseMenu"]
+margin_right = 70.0
+margin_bottom = 28.0
+text = "Resume"
+
+[node name="MenuButton" type="Button" parent="PauseMenu"]
+margin_top = 32.0
+margin_right = 70.0
+margin_bottom = 60.0
+text = "Menu"

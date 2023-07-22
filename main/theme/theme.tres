@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=6 format=2]
+[gd_resource type="Theme" load_steps=7 format=2]
 
 [ext_resource path="res://main/interface/KGRedHands.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://main/theme/normal_button.tres" type="StyleBox" id=2]
@@ -16,6 +16,15 @@ corner_radius_top_right = 6
 corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 20
+expand_margin_left = 10.0
+expand_margin_right = 10.0
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 1, 1, 1, 0.0588235 )
+border_width_top = 4
+border_color = Color( 1, 0.772549, 0, 1 )
+corner_radius_top_left = 2
+corner_radius_top_right = 2
 
 [resource]
 default_font = SubResource( 3 )
@@ -27,3 +36,4 @@ Button/styles/disabled = SubResource( 4 )
 Button/styles/hover = ExtResource( 2 )
 Button/styles/normal = ExtResource( 2 )
 Button/styles/pressed = ExtResource( 3 )
+Panel/styles/panel = SubResource( 5 )
