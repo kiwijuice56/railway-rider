@@ -9,17 +9,17 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Collectable",
 "class": "Coin",
 "language": "GDScript",
 "path": "res://main/collectable/coin/coin.gd"
 }, {
-"base": "Reference",
+"base": "Area",
 "class": "Collectable",
 "language": "GDScript",
 "path": "res://main/collectable/collectable.gd"
 }, {
-"base": "Reference",
+"base": "Spatial",
 "class": "CollectableSpawner",
 "language": "GDScript",
 "path": "res://main/collectable/collectable_spawner.gd"
