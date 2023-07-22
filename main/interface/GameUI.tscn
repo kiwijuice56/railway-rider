@@ -1,7 +1,6 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://main/interface/GameUI.gd" type="Script" id=2]
-[ext_resource path="res://main/interface/icon_small.png" type="Texture" id=11]
 [ext_resource path="res://main/theme/theme.tres" type="Theme" id=14]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -47,7 +46,7 @@ focus_mode = 0
 custom_styles/pressed = SubResource( 1 )
 custom_styles/normal = SubResource( 2 )
 enabled_focus_mode = 0
-icon = ExtResource( 11 )
+text = "i i"
 
 [node name="PauseMenu" type="VBoxContainer" parent="."]
 visible = false
