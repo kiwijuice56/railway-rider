@@ -22,6 +22,7 @@ var paused: bool = true
 
 func _ready() -> void:
 	randomize()
+	get_tree().paused = true
 	
 	# Load all tracks
 	# https://docs.godotengine.org/en/3.6/classes/class_directory.html
@@ -29,7 +30,7 @@ func _ready() -> void:
 	load_scenes(TRACK_BG_PATH, bg_tracks)
 	
 	reset()
-	get_tree().paused = true
+	
 
 func _physics_process(_delta: float) -> void:
 	if paused:
@@ -82,7 +83,7 @@ func load_scenes(path: String, array: Array) -> void:
 		file_name = dir.get_next()
 
 func play() -> void:
-	$Tween.interpolate_property($TitleCamera, "transform", null, $Player/Camera.transform, 1.0,
+	$Tween.interpolate_property($TitleCamera, "transform", null, $Player/Camera.transform, 1.0 if $TitleCamera.current else 0.2,
 	Tween.TRANS_QUAD, Tween.EASE_OUT)
 	$Tween.start()
 	yield($Tween, "tween_completed")
@@ -122,7 +123,7 @@ func reset() -> void:
 		if randf() < 0.5:
 			track.scale.x = -1
 	
-	$Player.reset()
+	yield($Player.reset(), "completed")
 	
 	speed = initial_speed
 
@@ -130,4 +131,10 @@ func death() -> void:
 	paused = true
 	$Player.death()
 	yield($Player, "died")
-	reset()
+	$Tween.interpolate_property($Player/Camera, "fov", 70, 1, 0.8)
+	$Tween.start()
+	yield($Tween, "tween_completed")
+	yield(reset(), "completed")
+	$Tween.interpolate_property($Player/Camera, "fov", 1, 70, 0.8)
+	get_tree().paused = true
+	$TitleScreen.enter()
