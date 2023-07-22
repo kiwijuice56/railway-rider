@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://main/collectable/collectable_spawner.gd"
 }, {
+"base": "Control",
+"class": "CreditScreen",
+"language": "GDScript",
+"path": "res://main/interface/credit_screen.gd"
+}, {
 "base": "Collectable",
 "class": "Frog",
 "language": "GDScript",
@@ -93,6 +98,7 @@ _global_script_class_icons={
 "Coin": "",
 "Collectable": "",
 "CollectableSpawner": "",
+"CreditScreen": "",
 "Frog": "",
 "Magnet": "",
 "Main": "",
