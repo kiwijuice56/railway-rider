@@ -2,7 +2,7 @@
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/player/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=3]
+[ext_resource path="res://main/music/funky_one.mp3" type="AudioStream" id=3]
 [ext_resource path="res://assets/city-skyline-silhouette-design-free-vector-removebg-preview.png" type="Texture" id=5]
 [ext_resource path="res://main/surfer_spawner.gd" type="Script" id=6]
 

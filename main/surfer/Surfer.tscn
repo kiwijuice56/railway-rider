@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://main/surfer/surfer.gd" type="Script" id=1]
 [ext_resource path="res://main/player/sounds/swoosh.wav" type="AudioStream" id=2]
+[ext_resource path="res://main/surfer/yell.wav" type="AudioStream" id=3]
+[ext_resource path="res://main/surfer/impact.wav" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -144,3 +146,13 @@ max_distance = 256.0
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 one_shot = true
+
+[node name="YellPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -0.062
+max_distance = 1024.0
+
+[node name="ImpactPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -5.111
+max_distance = 1024.0

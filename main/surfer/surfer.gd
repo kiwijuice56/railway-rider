@@ -75,6 +75,10 @@ func _physics_process(delta: float) -> void:
 
 func _on_player_hit(body: PhysicsBody) -> void:
 	body.get_parent().kill()
+	$YellPlayer.pitch_scale = rand_range(0.7, 1.3)
+	$YellPlayer.play()
+	$ImpactPlayer.pitch_scale = rand_range(0.7, 1.3)
+	$ImpactPlayer.play()
 	death()
 
 func jump() -> void:
