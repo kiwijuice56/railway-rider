@@ -5,15 +5,13 @@ extends Control
 func _ready() -> void:
 	GlobalState.connect("values_changed", self, "_on_values_changed")
 
-func _on_PauseButton_pressed():
+func pause():
 	get_tree().paused = true
 	pause_mode = PAUSE_MODE_PROCESS
-	$PauseButton.hide()
 	$PauseMenu.show()
 	
 
 func _on_ResumeButton_pressed():
-	$PauseButton.show()
 	$PauseMenu.hide()
 	get_tree().paused = false
 
