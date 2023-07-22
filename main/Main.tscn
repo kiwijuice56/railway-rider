@@ -108,7 +108,6 @@ volume_db = -14.0
 autoplay = true
 
 [node name="GameUI" parent="." instance=ExtResource( 4 )]
-visible = false
 
 [node name="TitleScreen" type="Control" parent="."]
 pause_mode = 2
