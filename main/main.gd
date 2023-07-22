@@ -22,6 +22,7 @@ var paused: bool = true
 
 func _ready() -> void:
 	randomize()
+	get_tree().paused = true
 	
 	# Load all tracks
 	# https://docs.godotengine.org/en/3.6/classes/class_directory.html
@@ -29,7 +30,7 @@ func _ready() -> void:
 	load_scenes(TRACK_BG_PATH, bg_tracks)
 	
 	reset()
-	get_tree().paused = true
+	
 
 func _physics_process(_delta: float) -> void:
 	if paused:
