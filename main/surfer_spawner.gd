@@ -7,7 +7,8 @@ export var seconds_per_spawn_range: float = 5.0
 onready var tracks: Spatial = get_node("../Tracks")
 
 var runners = [
-	preload("res://main/surfer/runner/jake/Jake.tscn")
+	preload("res://main/surfer/runner/jake/Jake.tscn"),
+	preload("res://main/surfer/runner/blake/Blake.tscn")
 ]
 var flyers = []
 

@@ -1,9 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/player/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/music/funky_one.mp3" type="AudioStream" id=3]
-[ext_resource path="res://assets/city-skyline-silhouette-design-free-vector-removebg-preview.png" type="Texture" id=5]
 [ext_resource path="res://main/surfer_spawner.gd" type="Script" id=6]
 
 [sub_resource type="SpatialMaterial" id=3]
@@ -55,12 +54,6 @@ one_shot = true
 stream = ExtResource( 3 )
 volume_db = -14.0
 autoplay = true
-
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.508283, 0 )
-visible = false
-opacity = 0.38
-texture = ExtResource( 5 )
 
 [node name="TitleCamera" type="Camera" parent="."]
 transform = Transform( 0.826747, 0, -0.562574, 0, 1, 0, 0.562574, 0, 0.826747, -4.031, 2.862, 4.549 )

@@ -111,9 +111,6 @@ func reset() -> void:
 		if randf() < 0.5:
 			track.scale.x = -1
 	
-	# Add city skylines to background
-	$Sprite3D.global_translate(Vector3(0,0, TRACK_LENGTH * -6))
-	
 	$Player.reset()
 	
 	speed = initial_speed

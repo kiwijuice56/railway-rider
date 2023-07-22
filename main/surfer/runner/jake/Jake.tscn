@@ -31,5 +31,5 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01718, 0.486055, 0 )
 [node name="AnimationPlayer" parent="." index="9"]
 playback_speed = 1.0
 
-[node name="SwooshPlayer" parent="." index="10"]
+[node name="SwooshPlayer" parent="." index="11"]
 max_distance = 339.0

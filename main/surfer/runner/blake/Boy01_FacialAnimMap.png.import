@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Boy01_spec.jpg-9d337a475c4e9e009fec937cebf9c5be.stex"
+path="res://.import/Boy01_FacialAnimMap.png-3d0965290eefc70455a3d506256d5c20.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://main/surfer/runner/jake/textures/Boy01_spec.jpg"
-dest_files=[ "res://.import/Boy01_spec.jpg-9d337a475c4e9e009fec937cebf9c5be.stex" ]
+source_file="res://main/surfer/runner/blake/Boy01_FacialAnimMap.png"
+dest_files=[ "res://.import/Boy01_FacialAnimMap.png-3d0965290eefc70455a3d506256d5c20.stex" ]
 
 [params]
 
