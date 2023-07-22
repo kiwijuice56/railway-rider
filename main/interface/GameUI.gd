@@ -17,3 +17,20 @@ func _process(delta):
 	# For every coin gained increment counter by one (do not keep right justified)
 	pass
 	
+
+
+func _on_PauseButton_pressed():
+	get_tree().paused = true
+	pause_mode = PAUSE_MODE_PROCESS
+	$PauseButton.hide()
+	$PauseMenu.show()
+	
+
+func _on_ResumeButton_pressed():
+	$PauseButton.show()
+	$PauseMenu.hide()
+	get_tree().paused = false
+
+
+func _on_MenuButton_pressed():
+	pass # Replace with function body.
