@@ -97,11 +97,25 @@ custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 enabled_focus_mode = 0
 text = "Play"
 
-[node name="CreditButton" type="Button" parent="VBoxContainer"]
+[node name="HelpButton" type="Button" parent="VBoxContainer"]
 unique_name_in_owner = true
 margin_top = 35.0
 margin_right = 100.0
 margin_bottom = 61.0
+focus_mode = 0
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+enabled_focus_mode = 0
+text = "Help"
+
+[node name="CreditButton" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
+margin_top = 70.0
+margin_right = 100.0
+margin_bottom = 96.0
 rect_min_size = Vector2( 100, 0 )
 focus_mode = 0
 size_flags_horizontal = 6

@@ -1,4 +1,4 @@
-class_name CreditScreen
+class_name HelpScreen
 extends Control
 
 func _ready() -> void:

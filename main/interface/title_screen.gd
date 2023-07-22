@@ -6,10 +6,13 @@ func _ready() -> void:
 # warning-ignore:return_value_discarded
 	get_node("%PlayButton").connect("button_up", self, "_on_play_pressed")
 # warning-ignore:return_value_discarded
+	get_node("%HelpButton").connect("button_up", self, "_on_help_pressed")
+# warning-ignore:return_value_discarded
 	get_node("%CreditButton").connect("button_up", self, "_on_credit_pressed")
 
 func _on_play_pressed() -> void:
 	get_node("%PlayButton").disabled = true
+	get_node("%HelpButton").disabled = true
 	get_node("%CreditButton").disabled = true
 	
 	$Tween.interpolate_property(self, "modulate:a", null, 0.0, 0.3)
@@ -18,8 +21,20 @@ func _on_play_pressed() -> void:
 	yield(get_parent().play(), "completed")
 	visible = false
 
+func _on_help_pressed() -> void:
+	get_node("%PlayButton").disabled = true
+	get_node("%HelpButton").disabled = true
+	get_node("%CreditButton").disabled = true
+	
+	$Tween.interpolate_property(self, "modulate:a", null, 0.0, 0.3)
+	
+	$Tween.start()
+	yield($Tween, "tween_completed")
+	get_node("../HelpScreen").enter()
+
 func _on_credit_pressed() -> void:
 	get_node("%PlayButton").disabled = true
+	get_node("%HelpButton").disabled = true
 	get_node("%CreditButton").disabled = true
 	
 	$Tween.interpolate_property(self, "modulate:a", null, 0.0, 0.3)
@@ -37,4 +52,5 @@ func enter() -> void:
 	yield($Tween, "tween_completed")
 	
 	get_node("%PlayButton").disabled = false
+	get_node("%HelpButton").disabled = false
 	get_node("%CreditButton").disabled = false

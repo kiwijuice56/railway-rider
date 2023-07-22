@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/player/Player.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://main/interface/CreditScreen.tscn" type="PackedScene" id=5]
 [ext_resource path="res://main/surfer_spawner.gd" type="Script" id=6]
 [ext_resource path="res://main/interface/TitleScreen.tscn" type="PackedScene" id=7]
+[ext_resource path="res://main/interface/HelpScreen.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_diffuse_mode = 4
@@ -38,6 +39,8 @@ size_flags_vertical = 3
 color = Color( 0, 0, 0, 0.258824 )
 
 [node name="TitleScreen" parent="." instance=ExtResource( 7 )]
+
+[node name="HelpScreen" parent="." instance=ExtResource( 8 )]
 
 [node name="CreditScreen" parent="." instance=ExtResource( 5 )]
 
