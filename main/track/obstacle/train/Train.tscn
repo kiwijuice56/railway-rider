@@ -72,7 +72,7 @@ surfaces/3 = {
 extents = Vector3( 0.79, 0.645, 1.292 )
 
 [sub_resource type="BoxShape" id=2]
-extents = Vector3( 0.8, 0.768, 1.311 )
+extents = Vector3( 0.8, 1.375, 1.311 )
 
 [node name="Train" instance=ExtResource( 2 )]
 script = ExtResource( 6 )
@@ -98,7 +98,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody" index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134008, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.455038, 0 )
 shape = SubResource( 2 )
 
 [editable path="TrainModel"]

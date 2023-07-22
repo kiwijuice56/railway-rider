@@ -14,8 +14,29 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.205563, 0 )
 
 [node name="HitArea" type="Area" parent="."]
 
-[node name="RayCast" type="RayCast" parent="."]
-transform = Transform( 1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -0.011, 0.996255, 0 )
+[node name="Left" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011, 0.996255, 0 )
+enabled = true
+cast_to = Vector3( 3, 0, 0 )
+collision_mask = 6
+collide_with_areas = true
+debug_shape_custom_color = Color( 1, 0.0235294, 0.0235294, 1 )
+
+[node name="Right" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011, 0.996255, 0 )
+enabled = true
+cast_to = Vector3( -3, 0, 0 )
+collision_mask = 6
+collide_with_areas = true
+debug_shape_custom_color = Color( 1, 0.0235294, 0.0235294, 1 )
+
+[node name="Front" type="RayCast" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011, 0.996255, 0 )
+enabled = true
+cast_to = Vector3( 0, 0, 3 )
+collision_mask = 6
+collide_with_areas = true
+debug_shape_custom_color = Color( 1, 0.0235294, 0.0235294, 1 )
 
 [node name="Tween" type="Tween" parent="."]
 
