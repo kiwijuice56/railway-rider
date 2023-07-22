@@ -20,6 +20,11 @@ transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0 )
 
 [node name="GuyDangerousModel" parent="SurferModel" index="0" instance=ExtResource( 2 )]
 
+[node name="Jump" parent="SurferModel/GuyDangerousModel" index="2"]
+playback_speed = 2.0
+
 [node name="CollisionShape" parent="HitArea" index="0"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22036, 0 )
 shape = SubResource( 2 )
+
+[editable path="SurferModel/GuyDangerousModel"]
