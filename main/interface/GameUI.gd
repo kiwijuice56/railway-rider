@@ -13,23 +13,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	# Score count needs to be discussed, counter depends on score modifiers
-	# For every coin gained increment counter by one (do not keep right justified)
-	pass
-	
+	if Input.is_action_pressed("menu"):
+		pause()
 
 
-func _on_PauseButton_pressed():
+func pause():
 	get_tree().paused = true
 	pause_mode = PAUSE_MODE_PROCESS
-	$PauseButton.hide()
 	$PauseMenu.show()
 	
 
 func _on_ResumeButton_pressed():
-	$PauseButton.show()
-	$PauseMenu.hide()
 	get_tree().paused = false
+	$PauseMenu.hide()
 
 
 func _on_MenuButton_pressed():

@@ -13,37 +13,24 @@ margin_bottom = -15.0
 theme = ExtResource( 14 )
 script = ExtResource( 2 )
 
-[node name="ContentPanel" type="Panel" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -40.0
-margin_bottom = 40.0
-
-[node name="PauseButton" type="Button" parent="."]
-margin_right = 32.0
-margin_bottom = 32.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "i i"
-
 [node name="PauseMenu" type="VBoxContainer" parent="."]
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
+margin_left = -45.0
+margin_top = -28.0
+margin_right = 45.0
+margin_bottom = 28.0
+custom_constants/separation = 9
 
 [node name="ResumeButton" type="Button" parent="PauseMenu"]
-margin_right = 70.0
-margin_bottom = 28.0
+margin_right = 90.0
+margin_bottom = 26.0
 text = "Resume"
 
 [node name="MenuButton" type="Button" parent="PauseMenu"]
-margin_top = 32.0
-margin_right = 70.0
-margin_bottom = 60.0
+margin_top = 35.0
+margin_right = 90.0
+margin_bottom = 61.0
 text = "Menu"
