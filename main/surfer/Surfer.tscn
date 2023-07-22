@@ -1,6 +1,76 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://main/surfer/surfer.gd" type="Script" id=1]
+[ext_resource path="res://main/player/sounds/swoosh.wav" type="AudioStream" id=2]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("SwooshPlayer:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=1]
+resource_name = "turn_left_surfer"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SurferModel:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 24 ), Vector3( 0, 0, 28 ), Vector3( 0, 0, -4 ), Vector3( 0, 0, 2 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SwooshPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "turn_right_surfer"
+tracks/0/type = "value"
+tracks/0/path = NodePath("SurferModel:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7, 0.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -24 ), Vector3( 0, 0, -28 ), Vector3( 0, 0, 4 ), Vector3( 0, 0, -2 ), Vector3( 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("SwooshPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="Surfer" type="KinematicBody"]
 collision_layer = 16
@@ -41,3 +111,13 @@ debug_shape_custom_color = Color( 1, 0.0235294, 0.0235294, 1 )
 [node name="Tween" type="Tween" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+playback_speed = 2.5
+anims/RESET = SubResource( 2 )
+anims/turn_left_surfer = SubResource( 1 )
+anims/turn_right_surfer = SubResource( 3 )
+
+[node name="SwooshPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 2 )
+volume_db = -12.0
+pitch_scale = 1.25
+max_distance = 256.0

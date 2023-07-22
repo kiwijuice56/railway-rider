@@ -9,6 +9,8 @@
 [ext_resource path="res://main/player/sounds/crash.wav" type="AudioStream" id=7]
 [ext_resource path="res://main/player/sounds/creak.wav" type="AudioStream" id=8]
 [ext_resource path="res://main/player/sounds/explosion.ogg" type="AudioStream" id=9]
+[ext_resource path="res://main/player/turn_left.tres" type="Animation" id=10]
+[ext_resource path="res://main/player/turn_right.tres" type="Animation" id=11]
 
 [sub_resource type="SphereShape" id=8]
 radius = 5.0
@@ -517,108 +519,6 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "turn_left"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Train/TrainModel:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 24 ), Vector3( 0, 0, 28 ), Vector3( 0, 0, -4 ), Vector3( 0, 0, 2 ), Vector3( 0, 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("SwooshPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ImpactPlayer:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.6 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Train/TrainModel:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=3]
-resource_name = "turn_right"
-tracks/0/type = "value"
-tracks/0/path = NodePath("Train/TrainModel:rotation_degrees")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.3, 0.6, 0.7, 0.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -24 ), Vector3( 0, 0, -28 ), Vector3( 0, 0, 4 ), Vector3( 0, 0, -2 ), Vector3( 0, 0, 0 ) ]
-}
-tracks/1/type = "value"
-tracks/1/path = NodePath("SwooshPlayer:playing")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath("ImpactPlayer:playing")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.6 ),
-"transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
-}
-tracks/3/type = "value"
-tracks/3/path = NodePath("Train/TrainModel:scale")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector3( 1, 1, 1 ) ]
-}
-
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
 lane_offset = 3.0
@@ -673,8 +573,8 @@ anims/death = SubResource( 7 )
 anims/flip_left = SubResource( 4 )
 anims/flip_right = SubResource( 5 )
 anims/jump = SubResource( 6 )
-anims/turn_left = SubResource( 2 )
-anims/turn_right = SubResource( 3 )
+anims/turn_left = ExtResource( 10 )
+anims/turn_right = ExtResource( 11 )
 
 [node name="SwooshPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

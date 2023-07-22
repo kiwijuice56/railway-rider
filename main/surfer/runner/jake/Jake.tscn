@@ -14,3 +14,6 @@ shape = SubResource( 1 )
 
 [node name="JakeModel" parent="SurferModel" index="0" instance=ExtResource( 2 )]
 transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0 )
+
+[node name="AnimationPlayer" parent="." index="7"]
+playback_speed = 1.0
