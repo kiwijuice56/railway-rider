@@ -45,6 +45,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_player_hit(body: PhysicsBody) -> void:
 	body.get_parent().kill()
+	GlobalState.score_mult += score_mult
 	$YellPlayer.pitch_scale = rand_range(0.7, 1.3)
 	$YellPlayer.play()
 	$ImpactPlayer.pitch_scale = rand_range(0.7, 1.3)
@@ -71,8 +72,6 @@ func switch_lane() -> void:
 	$Tween.start()
 
 func death() -> void:
-	GlobalState.score_mult += score_mult
-	
 	dead = true
 	velocity = Vector3(2.0 * (randf() - 0.5), 0.6, -randf() - 0.8).normalized() * 64
 	$Timer.start()
