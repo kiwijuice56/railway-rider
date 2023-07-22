@@ -29,6 +29,7 @@ func _ready() -> void:
 	load_scenes(TRACK_BG_PATH, bg_tracks)
 	
 	reset()
+	get_tree().paused = true
 
 func _physics_process(_delta: float) -> void:
 	if paused:
@@ -79,6 +80,16 @@ func load_scenes(path: String, array: Array) -> void:
 		if not dir.current_is_dir():
 			array.append(load(path + file_name))
 		file_name = dir.get_next()
+
+func play() -> void:
+	$Tween.interpolate_property($TitleCamera, "transform", null, $Player/Camera.transform, 1.0,
+	Tween.TRANS_QUAD, Tween.EASE_OUT)
+	$Tween.start()
+	yield($Tween, "tween_completed")
+	$TitleCamera.current = false
+	$Player/Camera.current = true
+	
+	get_tree().paused = false
 
 # Reset game to initial state
 func reset() -> void:
