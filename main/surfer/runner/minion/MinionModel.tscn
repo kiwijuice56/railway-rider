@@ -9,3 +9,6 @@ transform = Transform( 100, 0, 0, 0, 100, 0, 0, 0, 100, 0, 0, 0 )
 
 [node name="mc_001_0_5_mesh5" parent="Skeleton" index="0"]
 visible = false
+
+[node name="mc_001_0_4_mesh4" parent="Skeleton" index="1"]
+visible = false
