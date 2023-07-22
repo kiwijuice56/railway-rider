@@ -41,8 +41,28 @@ func _physics_process(delta: float) -> void:
 		velocity.z = speed * 3
 	
 	# TODO: Implement turning
-	if $Front.is_colliding() and is_on_floor():
-		jump()
+	if $Front.is_colliding():
+		if lane == 0:
+			if not $FrontRight.is_colliding():
+				lane += 1
+			elif not $FrontLeft.is_colliding():
+				lane -= 1
+			elif is_on_floor():
+				jump()
+		elif lane == -1:
+			if not $Front.is_colliding():
+				lane += 1
+			elif is_on_floor():
+				jump()
+			else:
+				lane += 1
+		else:
+			if not $Front.is_colliding():
+				lane -= 1
+			elif is_on_floor():
+				jump()
+			else:
+				lane -= 1
 	
 
 func jump() -> void:
