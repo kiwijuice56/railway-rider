@@ -35,7 +35,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	
 	# Increment score and speed
-	GlobalState.score += speed * score_per_speed
+	GlobalState.score += speed * score_per_speed * GlobalState.score_mult
 	speed += accel
 	speed = min(speed, max_speed)
 	
@@ -84,6 +84,7 @@ func load_scenes(path: String, array: Array) -> void:
 func reset() -> void:
 	paused = false
 	GlobalState.score = 0
+	GlobalState.score_mult = 1.0
 	
 	for child in $Tracks.get_children() + $Backgrounds.get_children():
 		child.get_parent().remove_child(child)

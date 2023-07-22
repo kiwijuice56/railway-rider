@@ -137,20 +137,21 @@ anims/RESET = SubResource( 2 )
 anims/turn_left_surfer = SubResource( 1 )
 anims/turn_right_surfer = SubResource( 3 )
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
 [node name="SwooshPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 2 )
 volume_db = -12.0
 pitch_scale = 1.25
 max_distance = 256.0
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-one_shot = true
-
 [node name="YellPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 3 )
 volume_db = -0.062
 max_distance = 1024.0
+attenuation = 2.37841
 
 [node name="ImpactPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource( 4 )
