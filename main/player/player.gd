@@ -22,6 +22,10 @@ func _ready() -> void:
 	$Train.connect("landed", self, "_on_train_landed")
 # warning-ignore:return_value_discarded
 	$JumpBoostTimer.connect("timeout", self, "_on_jump_boost_timeout")
+# warning-ignore:return_value_discarded
+	$MagnetBoostTimer.connect("timeout", self, "_on_magnet_boost_timeout")
+# warning-ignore:return_value_discarded
+	$Train/AttractArea.connect("area_entered", self, "_on_coin_entered")
 
 func _process(delta: float) -> void:
 	# On death, shoot out train parts
@@ -75,6 +79,23 @@ func _on_train_landed() -> void:
 func _on_jump_boost_timeout() -> void:
 	$Train.boosted = false
 
+func _on_magnet_boost_timeout() -> void:
+	$Train/AttractArea/CollisionShape.disabled = true
+
+func _on_coin_entered(area: Area) -> void:
+	if not area is Coin or area.magnetized:
+		return
+	area.magnetized = true
+	call_deferred("magnet_collect", area)
+
+func magnet_collect(coin: Coin) -> void:
+	var global_pos: Vector3 = coin.global_translation
+	coin.get_parent().remove_child(coin)
+	get_tree().get_root().get_node("Main").add_child(coin)
+	coin.global_translation = global_pos
+	coin.target = $Train
+	coin.set_physics_process(true)
+
 func switch_lane(old_lane: int) -> void:
 	# Add some variation to most common sound
 	$SwooshPlayer.pitch_scale = rand_range(0.7, 1.2)
@@ -106,11 +127,18 @@ func switch_lane(old_lane: int) -> void:
 	$Tween.start()
 
 func reset() -> void:
+	set_process(false)
+	
 	dead = false
-	$Train.translation.y = 1.216
-	$AnimationPlayer.play("RESET")
+	$Train.translation.y = 1.3
 	$Train/CollisionShape.call_deferred("set", "disabled", false)
+	$AnimationPlayer.stop()
+	$AnimationPlayer.play("RESET")
+	yield($AnimationPlayer, "animation_finished")
+	_on_magnet_boost_timeout()
 	_on_jump_boost_timeout()
+	
+	set_process(true)
 
 func death() -> void:
 	$ExplosionStreamPlayer.playing = true
@@ -132,3 +160,7 @@ func death() -> void:
 func jump_boost() -> void:
 	$JumpBoostTimer.start()
 	$Train.boosted = true
+
+func magnet_boost() -> void:
+	$MagnetBoostTimer.start()
+	$Train/AttractArea/CollisionShape.disabled = false

@@ -6,4 +6,4 @@ func _ready() -> void:
 	connect("body_entered", self, "_on_body_entered")
 
 func _on_body_entered(_body: PhysicsBody) -> void:
-	pass
+	$AnimationPlayer.play("collect")

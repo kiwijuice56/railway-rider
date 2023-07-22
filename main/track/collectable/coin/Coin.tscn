@@ -153,6 +153,7 @@ tracks/4/keys = {
 
 [node name="Coin" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+speed = 0.5
 
 [node name="CoinModel" parent="." index="0" instance=ExtResource( 2 )]
 transform = Transform( 1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0.444485, 0 )

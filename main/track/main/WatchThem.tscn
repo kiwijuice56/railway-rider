@@ -1,0 +1,108 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://main/track/obstacle/train/Train.tscn" type="PackedScene" id=1]
+[ext_resource path="res://main/track/collectable/CollectableSpawner.tscn" type="PackedScene" id=2]
+[ext_resource path="res://main/track/props/FloorLaneModel.tscn" type="PackedScene" id=4]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 4.5, 0.8, 12 )
+
+[node name="TrainJump" type="Spatial"]
+
+[node name="FloorLane" parent="." instance=ExtResource( 4 )]
+
+[node name="FloorLane2" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.97971, 0, 0 )
+
+[node name="FloorLane3" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97784, 0, 0 )
+
+[node name="Train" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99509, 0, -10.7741 )
+
+[node name="Train2" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99509, 0, -7.91182 )
+
+[node name="Train3" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.99509, 0, -5.11758 )
+
+[node name="Train4" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.118 )
+
+[node name="Train5" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.32644 )
+
+[node name="Train6" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.456573 )
+
+[node name="Train7" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98007, 0, 0.456573 )
+
+[node name="Train8" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98007, 0, 3.31572 )
+
+[node name="Train9" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98007, 0, 6.21273 )
+
+[node name="Collectables" type="Spatial" parent="."]
+
+[node name="CollectableSpawner3" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0287, 2.41938, 1.54887 )
+
+[node name="CollectableSpawner4" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0287, 2.41938, 4.04869 )
+
+[node name="CollectableSpawner5" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0287, 2.41938, 6.54869 )
+
+[node name="CollectableSpawner6" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0287, 2.41938, 0.357447 )
+
+[node name="CollectableSpawner7" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0287, 2.41938, 2.85727 )
+
+[node name="CollectableSpawner8" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0287, 2.41938, 5.35727 )
+
+[node name="CollectableSpawner9" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087317, 2.41938, -4.15482 )
+
+[node name="CollectableSpawner10" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087317, 2.41938, -1.655 )
+
+[node name="CollectableSpawner11" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087317, 2.41938, 0.845 )
+
+[node name="CollectableSpawner12" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087317, 2.41938, -5.34624 )
+
+[node name="CollectableSpawner13" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087317, 2.41938, -2.84642 )
+
+[node name="CollectableSpawner14" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087317, 2.41938, -0.346418 )
+
+[node name="CollectableSpawner15" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01033, 2.41938, -9.57357 )
+
+[node name="CollectableSpawner16" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01033, 2.41938, -7.07375 )
+
+[node name="CollectableSpawner17" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01033, 2.41938, -4.57375 )
+
+[node name="CollectableSpawner18" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01033, 2.41938, -10.765 )
+
+[node name="CollectableSpawner19" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01033, 2.41938, -8.26517 )
+
+[node name="CollectableSpawner20" parent="Collectables" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.01033, 2.41938, -5.76517 )
+
+[node name="KinematicBody" type="KinematicBody" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape" type="CollisionShape" parent="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.679113, 0 )
+shape = SubResource( 1 )

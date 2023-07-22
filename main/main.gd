@@ -85,8 +85,6 @@ func reset() -> void:
 	paused = false
 	GlobalState.score = 0
 	
-	$Player.reset()
-	
 	for child in $Tracks.get_children() + $Backgrounds.get_children():
 		child.get_parent().remove_child(child)
 		child.queue_free()
@@ -114,6 +112,8 @@ func reset() -> void:
 	
 	# Add city skylines to background
 	$Sprite3D.global_translate(Vector3(0,0, TRACK_LENGTH * -6))
+	
+	$Player.reset()
 	
 	speed = initial_speed
 

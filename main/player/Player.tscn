@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://main/player/player.gd" type="Script" id=1]
 [ext_resource path="res://main/player/train/Train.tscn" type="PackedScene" id=2]
@@ -9,6 +9,9 @@
 [ext_resource path="res://main/player/sounds/crash.wav" type="AudioStream" id=7]
 [ext_resource path="res://main/player/sounds/creak.wav" type="AudioStream" id=8]
 [ext_resource path="res://main/player/sounds/explosion.ogg" type="AudioStream" id=9]
+
+[sub_resource type="SphereShape" id=8]
+radius = 5.0
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -644,10 +647,14 @@ transform = Transform( 1.46249, 0, 0, 0, 1.46249, 0, 0, 0, 1.46249, 0.571959, -0
 [node name="body" parent="Train/TrainModel" index="6"]
 transform = Transform( 0.792053, 0, 0, 0, 0.777978, 0, 0, 0, 0.802703, 0, 0, 0 )
 
-[node name="TopView" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, -0.0475422, 0.998869, 0, -0.998869, -0.0475422, 0, 75.5833, 0.277679 )
-visible = false
-current = true
+[node name="AttractArea" type="Area" parent="Train"]
+transform = Transform( 1.04712, 0, 0, 0, 1.0582, 0, 0, 0, 1.3369, 0, -1.28677, 0 )
+collision_layer = 0
+collision_mask = 8
+
+[node name="CollisionShape" type="CollisionShape" parent="Train/AttractArea"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16552, 0 )
+shape = SubResource( 8 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.913545, 0.406737, 0, -0.406737, 0.913545, 0, 5.1, 4.9 )
@@ -700,6 +707,10 @@ wait_time = 2.0
 one_shot = true
 
 [node name="JumpBoostTimer" type="Timer" parent="."]
+wait_time = 15.0
+one_shot = true
+
+[node name="MagnetBoostTimer" type="Timer" parent="."]
 wait_time = 15.0
 one_shot = true
 
