@@ -8,7 +8,7 @@ var collectables: Array = [
 	preload("res://main/track/collectable/frog/Frog.tscn"),
 	preload("res://main/track/collectable/magnet/Magnet.tscn")
 ] 
-var rarities: Array = [0.99, 0.995, 1.0]
+var rarities: Array = [0.98, 0.982, 1.0]
 
 func _ready() -> void:
 	var rand: float = randf()
