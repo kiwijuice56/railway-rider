@@ -4,7 +4,7 @@ extends KinematicBody
 const GRAVITY: Vector3 = Vector3(0, -32.0, 0)
 const JUMP: Vector3 = Vector3(0, 16.0, 0)
 
-export var speed: float = 4
+export var speed: float = 2
 export var lane_offset: float = 3.0
 export var switch_time: float = 0.3
 

@@ -13,6 +13,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.019, 0 )
 shape = SubResource( 1 )
 
 [node name="JakeModel" parent="SurferModel" index="0" instance=ExtResource( 2 )]
+transform = Transform( 1.35, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0 )
 
 [node name="FrontLeft" parent="." index="6"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.989, 0.486055, 0 )
