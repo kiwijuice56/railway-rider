@@ -97,6 +97,7 @@ func reset() -> void:
 	paused = false
 	GlobalState.score = 0
 	GlobalState.score_mult = 1.0
+	GlobalState.coins = 0
 	
 	for child in $Tracks.get_children() + $Backgrounds.get_children():
 		child.get_parent().remove_child(child)
@@ -128,6 +129,9 @@ func reset() -> void:
 	speed = initial_speed
 
 func death() -> void:
+	GlobalState.total_coins += GlobalState.coins
+	GlobalState.save()
+	
 	paused = true
 	$Player.death()
 	yield($Player, "died")

@@ -7,6 +7,9 @@ func _ready() -> void:
 	get_node("%PlayButton").connect("button_up", self, "_on_play_pressed")
 # warning-ignore:return_value_discarded
 	get_node("%CreditButton").connect("button_up", self, "_on_credit_pressed")
+	
+	yield(get_tree().get_root(), "ready")
+	enter()
 
 func _on_play_pressed() -> void:
 	get_node("%PlayButton").disabled = true
@@ -29,7 +32,7 @@ func _on_credit_pressed() -> void:
 	get_node("../CreditScreen").enter()
 
 func enter() -> void:
-	$HighScoreLabel.text = "Your high score: %07d" % int(GlobalState.high_score)
+	$HighScoreLabel.text = "Your high score: %07d\nTotal coins: %03d" % [int(GlobalState.high_score), int(GlobalState.total_coins)]
 	$Tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 0.3)
 	$Tween.interpolate_property(get_node("../GameUI"), "modulate:a", null, 0.0, 0.3)
 	$Tween.start()

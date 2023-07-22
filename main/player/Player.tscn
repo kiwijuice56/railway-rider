@@ -135,7 +135,7 @@ surfaces/1 = {
 }
 
 [sub_resource type="SphereShape" id=8]
-radius = 5.0
+radius = 8.0
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -974,6 +974,7 @@ tracks/3/keys = {
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
 lane_offset = 3.0
+switch_time = 0.09
 
 [node name="Train" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.955, 0, 0, 0, 0.945, 0, 0, 0, 0.748, 0, 1.216, 0 )
