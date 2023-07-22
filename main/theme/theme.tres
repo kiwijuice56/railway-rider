@@ -3,6 +3,8 @@
 [ext_resource path="res://main/interface/KGRedHands.ttf" type="DynamicFontData" id=1]
 
 [sub_resource type="DynamicFont" id=3]
+outline_size = 2
+outline_color = Color( 0.94902, 0.517647, 0.113725, 1 )
 font_data = ExtResource( 1 )
 
 [sub_resource type="StyleBoxFlat" id=7]
@@ -44,11 +46,17 @@ expand_margin_bottom = 2.0
 anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 1, 1, 1, 0.0588235 )
-border_width_top = 4
-border_color = Color( 1, 0.6, 0.129412, 1 )
-corner_radius_top_left = 2
-corner_radius_top_right = 2
+bg_color = Color( 0.901961, 0.470588, 0.117647, 1 )
+border_width_top = 6
+border_color = Color( 0.45098, 0.337255, 0, 0 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
 
 [sub_resource type="DynamicFont" id=6]
 outline_color = Color( 1, 0.67451, 0.25098, 1 )

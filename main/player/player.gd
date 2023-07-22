@@ -19,6 +19,9 @@ var vel: Dictionary = {}
 var first_land: bool = false
 
 func _ready() -> void:
+	get_node("%Magnet").scale = Vector3(0,0,0)
+	get_node("%Frog").scale = Vector3(0,0,0)
+	
 # warning-ignore:return_value_discarded
 	$Train.connect("landed", self, "_on_train_landed")
 # warning-ignore:return_value_discarded
@@ -82,9 +85,11 @@ func _on_train_landed() -> void:
 	$Camera.shake(0.25, 40, 0.2)
 
 func _on_jump_boost_timeout() -> void:
+	$Train/FrogAnimationPlayer.play("frog_out")
 	$Train.boosted = false
 
 func _on_magnet_boost_timeout() -> void:
+	$Train/MagnetAnimationPlayer.play("magnet_out")
 	$Train/AttractArea/CollisionShape.disabled = true
 
 func _on_coin_entered(area: Area) -> void:
@@ -141,8 +146,17 @@ func reset() -> void:
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("RESET")
 	yield($AnimationPlayer, "animation_finished")
-	_on_magnet_boost_timeout()
-	_on_jump_boost_timeout()
+	
+	# Reset powerups
+	$Train/MagnetAnimationPlayer.stop()
+	$Train/FrogAnimationPlayer.stop()
+	
+	get_node("%Magnet").scale = Vector3(0,0,0)
+	get_node("%Frog").scale = Vector3(0,0,0)
+	
+	$Train/AttractArea/CollisionShape.disabled = true
+	$Train.boosted = false
+	
 	
 	set_process(true)
 
@@ -164,10 +178,14 @@ func death() -> void:
 	emit_signal("died")
 
 func jump_boost() -> void:
+	$Train/FrogAnimationPlayer.play("frog_in")
+	
 	$JumpBoostTimer.start()
 	$Train.boosted = true
 
 func magnet_boost() -> void:
+	$Train/MagnetAnimationPlayer.play("magnet_in")
+	
 	$MagnetBoostTimer.start()
 	$Train/AttractArea/CollisionShape.disabled = false
 
