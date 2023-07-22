@@ -12,27 +12,27 @@ _global_script_classes=[ {
 "base": "Collectable",
 "class": "Coin",
 "language": "GDScript",
-"path": "res://main/track/collectable/coin/coin.gd"
+"path": "res://main/collectable/coin/coin.gd"
 }, {
 "base": "Area",
 "class": "Collectable",
 "language": "GDScript",
-"path": "res://main/track/collectable/collectable.gd"
+"path": "res://main/collectable/collectable.gd"
 }, {
 "base": "Spatial",
 "class": "CollectableSpawner",
 "language": "GDScript",
-"path": "res://main/track/collectable/collectable_spawner.gd"
+"path": "res://main/collectable/collectable_spawner.gd"
 }, {
 "base": "Collectable",
 "class": "Frog",
 "language": "GDScript",
-"path": "res://main/track/collectable/frog/frog.gd"
+"path": "res://main/collectable/frog/frog.gd"
 }, {
 "base": "Collectable",
 "class": "Magnet",
 "language": "GDScript",
-"path": "res://main/track/collectable/magnet/magnet.gd"
+"path": "res://main/collectable/magnet/magnet.gd"
 }, {
 "base": "Node",
 "class": "Main",
@@ -60,6 +60,16 @@ _global_script_classes=[ {
 "path": "res://main/player/screen_shake_camera.gd"
 }, {
 "base": "KinematicBody",
+"class": "Surfer",
+"language": "GDScript",
+"path": "res://main/surfer/surfer.gd"
+}, {
+"base": "Spatial",
+"class": "SurferSpawner",
+"language": "GDScript",
+"path": "res://main/surfer_spawner.gd"
+}, {
+"base": "KinematicBody",
 "class": "Train",
 "language": "GDScript",
 "path": "res://main/player/train/train.gd"
@@ -80,6 +90,8 @@ _global_script_class_icons={
 "ObstacleSpawner": "",
 "Player": "",
 "ScreenShakeCamera": "",
+"Surfer": "",
+"SurferSpawner": "",
 "Train": "",
 "TrainObstacle": ""
 }
@@ -160,6 +172,7 @@ jump={
 3d_physics/layer_2="obstacle"
 3d_physics/layer_3="floor"
 3d_physics/layer_4="collectable"
+3d_physics/layer_5="surfer"
 
 [physics]
 

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main/collectable/collectable.gd" type="Script" id=1]
+[ext_resource path="res://main/collectable/coin/collect.wav" type="AudioStream" id=2]
+
+[node name="Collectable" type="Area"]
+collision_layer = 8
+script = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+
+[node name="CollectPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
