@@ -137,6 +137,9 @@ func switch_lane(old_lane: int) -> void:
 	$Tween.start()
 
 func reset() -> void:
+	$MagnetBoostTimer.stop()
+	$JumpBoostTimer.stop()
+	
 	set_process(false)
 	
 	dead = false

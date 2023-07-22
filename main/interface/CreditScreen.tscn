@@ -47,6 +47,7 @@ tracks/0/keys = {
 
 [node name="CreditScreen" type="Control"]
 pause_mode = 2
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -133,7 +134,7 @@ own_world = true
 world = SubResource( 11 )
 transparent_bg = true
 handle_input_locally = false
-render_target_update_mode = 3
+render_target_update_mode = 0
 
 [node name="FrogModel" parent="MarginContainer/VBoxContainer2/ViewportContainer/Viewport" instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0 )

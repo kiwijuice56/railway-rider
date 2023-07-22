@@ -75,10 +75,11 @@ skeleton = NodePath("../..")
 
 [node name="SurferSpawner" type="Spatial" parent="."]
 script = ExtResource( 6 )
-seconds_per_spawn = 3.0
+seconds_per_spawn = 2.5
 seconds_per_spawn_range = 1.0
 
 [node name="Timer" type="Timer" parent="SurferSpawner"]
+wait_time = 1.5
 one_shot = true
 
 [node name="Tween" type="Tween" parent="."]
