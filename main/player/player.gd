@@ -164,3 +164,7 @@ func jump_boost() -> void:
 func magnet_boost() -> void:
 	$MagnetBoostTimer.start()
 	$Train/AttractArea/CollisionShape.disabled = false
+
+func kill() -> void:
+	$ExplosionStreamPlayer.playing = true
+	$Camera.shake(0.65, 60, 0.3)

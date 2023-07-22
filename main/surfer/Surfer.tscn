@@ -83,6 +83,9 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.205563, 0 )
 [node name="SurferModel" type="Spatial" parent="."]
 
 [node name="HitArea" type="Area" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape" type="CollisionShape" parent="HitArea"]
 
 [node name="Left" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011, 0.996255, 0 )
@@ -137,3 +140,7 @@ stream = ExtResource( 2 )
 volume_db = -12.0
 pitch_scale = 1.25
 max_distance = 256.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

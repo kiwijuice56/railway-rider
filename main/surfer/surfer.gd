@@ -10,6 +10,7 @@ export var switch_time: float = 0.3
 
 var lane: int = 0
 var velocity: Vector3
+var dead: bool = false
 
 func _ready() -> void:
 	lane = randi() % 2 - 1
@@ -18,8 +19,18 @@ func _ready() -> void:
 	var anim: AnimationPlayer = $SurferModel.get_child(0).get_node("AnimationPlayer")
 	anim.get_animation("default").loop = true
 	anim.play("default")
+	
+	$HitArea.connect("body_entered", self, "_on_player_hit")
 
 func _physics_process(delta: float) -> void:
+	if dead:
+		velocity.y -= delta * 32 
+		translation += velocity * delta
+		rotation_degrees.x += 256 * delta
+		rotation_degrees.z += 64 * delta
+		return
+	
+	
 	if is_on_wall():
 		death()
 	
@@ -61,17 +72,24 @@ func _physics_process(delta: float) -> void:
 			switch_lane()
 		else:
 			lane = old_lane
-	
+
+func _on_player_hit(body: PhysicsBody) -> void:
+	body.get_parent().kill()
+	death()
 
 func jump() -> void:
+	$SwooshPlayer.play()
 	velocity += JUMP
 
 func death() -> void:
+	dead = true
+	velocity = Vector3(2.0 * (randf() - 0.5), randf() / 2.0, -randf() - 0.5).normalized() * 64
+	$Timer.start()
+	yield($Timer, "timeout")
 	call_deferred("queue_free")
 
 func switch_lane() -> void:
-	#var dir: String = "left" if old_lane > lane else "right"
-	#$AnimationPlayer.play("turn_" + dir + "_surfer")
+	$SwooshPlayer.play()
 	
 	$Tween.interpolate_property(self, "translation:x", null, 
 	lane_offset * lane, switch_time,
