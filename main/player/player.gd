@@ -157,7 +157,6 @@ func reset() -> void:
 	$Train/AttractArea/CollisionShape.disabled = true
 	$Train.boosted = false
 	
-	
 	set_process(true)
 
 func death() -> void:

@@ -27,7 +27,9 @@ func _on_credit_pressed() -> void:
 	get_node("../CreditScreen").enter()
 
 func enter() -> void:
+	$HighScoreLabel.text = "Your high score: %07d" % int(GlobalState.high_score)
 	$Tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 0.3)
+	$Tween.interpolate_property(get_node("../GameUI"), "modulate:a", null, 0.0, 0.3)
 	$Tween.start()
 	visible = true
 	yield($Tween, "tween_completed")
