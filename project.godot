@@ -9,17 +9,17 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Reference",
+"base": "Collectable",
 "class": "Coin",
 "language": "GDScript",
 "path": "res://main/collectable/coin/coin.gd"
 }, {
-"base": "Reference",
+"base": "Area",
 "class": "Collectable",
 "language": "GDScript",
 "path": "res://main/collectable/collectable.gd"
 }, {
-"base": "Reference",
+"base": "Spatial",
 "class": "CollectableSpawner",
 "language": "GDScript",
 "path": "res://main/collectable/collectable_spawner.gd"
@@ -29,7 +29,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://main/interface/credit_screen.gd"
 }, {
-"base": "Reference",
+"base": "Collectable",
 "class": "Frog",
 "language": "GDScript",
 "path": "res://main/collectable/frog/frog.gd"
@@ -39,7 +39,7 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://main/interface/game_ui.gd"
 }, {
-"base": "Reference",
+"base": "Collectable",
 "class": "Magnet",
 "language": "GDScript",
 "path": "res://main/collectable/magnet/magnet.gd"
