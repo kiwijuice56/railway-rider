@@ -83,6 +83,7 @@ func load_scenes(path: String, array: Array) -> void:
 		file_name = dir.get_next()
 
 func play() -> void:
+	
 	$Tween.interpolate_property($TitleCamera, "transform", null, $Player/Camera.transform, 1.0 if $TitleCamera.current else 0.2,
 	Tween.TRANS_QUAD, Tween.EASE_OUT)
 	$Tween.start()
@@ -91,9 +92,12 @@ func play() -> void:
 	$Player/Camera.current = true
 	
 	get_tree().paused = false
+	$SurferSpawner/Timer.start()
 
 # Reset game to initial state
 func reset() -> void:
+	
+	$SurferSpawner/Timer.stop()
 	paused = false
 	GlobalState.score = 0
 	GlobalState.score_mult = 1.0
@@ -127,6 +131,7 @@ func reset() -> void:
 	yield($Player.reset(), "completed")
 	
 	speed = initial_speed
+	
 
 func death() -> void:
 	GlobalState.total_coins += GlobalState.coins
