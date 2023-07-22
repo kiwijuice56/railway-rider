@@ -1,98 +1,97 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://main/interface/game_ui.gd" type="Script" id=2]
 [ext_resource path="res://main/theme/theme.tres" type="Theme" id=14]
 
+[sub_resource type="StyleBoxFlat" id=1]
+content_margin_left = 4.0
+content_margin_right = 4.0
+content_margin_top = 4.0
+content_margin_bottom = 4.0
+bg_color = Color( 0, 0, 0, 0.282353 )
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [node name="GameUI" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 15.0
-margin_top = 15.0
-margin_right = -15.0
-margin_bottom = -15.0
 theme = ExtResource( 14 )
 script = ExtResource( 2 )
 
-[node name="PauseButton" type="Button" parent="."]
-visible = false
-margin_right = 32.0
-margin_bottom = 32.0
-focus_mode = 0
-enabled_focus_mode = 0
-text = "i i"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
 
-[node name="PauseMenu" type="VBoxContainer" parent="."]
-visible = false
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -20.0
-margin_top = -20.0
-margin_right = 20.0
-margin_bottom = 20.0
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 146.0
+margin_bottom = 78.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_styles/panel = SubResource( 1 )
 
-[node name="ResumeButton" type="Button" parent="PauseMenu"]
-margin_right = 70.0
-margin_bottom = 26.0
-text = "Resume"
-
-[node name="MenuButton" type="Button" parent="PauseMenu"]
-margin_top = 30.0
-margin_right = 70.0
-margin_bottom = 56.0
-text = "Menu"
-
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 138.0
+margin_bottom = 70.0
 custom_constants/separation = 9
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer"]
 margin_right = 53.0
-margin_bottom = 74.0
+margin_bottom = 66.0
+custom_constants/separation = 0
 
-[node name="ScoreLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
+[node name="ScoreLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/VBoxContainer"]
 margin_right = 53.0
 margin_bottom = 22.0
 text = "score"
 align = 2
 
-[node name="CoinLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 26.0
+[node name="CoinLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 22.0
 margin_right = 53.0
-margin_bottom = 48.0
+margin_bottom = 44.0
 text = "coins"
 align = 2
 
-[node name="ScoreMultLabel" type="Label" parent="HBoxContainer/VBoxContainer"]
-margin_top = 52.0
+[node name="ScoreMultLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/VBoxContainer"]
+margin_top = 44.0
 margin_right = 53.0
-margin_bottom = 74.0
+margin_bottom = 66.0
 text = "bonus"
 align = 2
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/HBoxContainer"]
 margin_left = 62.0
-margin_right = 146.0
-margin_bottom = 74.0
+margin_right = 134.0
+margin_bottom = 66.0
+custom_constants/separation = 0
 
-[node name="ScoreLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="ScoreLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
-margin_right = 84.0
+margin_right = 72.0
 margin_bottom = 22.0
-text = "0000000"
+rect_min_size = Vector2( 72, 0 )
+text = "000000"
 
-[node name="CoinLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="CoinLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
-margin_top = 26.0
-margin_right = 84.0
-margin_bottom = 48.0
+margin_top = 22.0
+margin_right = 72.0
+margin_bottom = 44.0
 text = "000"
 
-[node name="ScoreMultLabel" type="Label" parent="HBoxContainer/VBoxContainer2"]
+[node name="ScoreMultLabel" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer/VBoxContainer2"]
 unique_name_in_owner = true
-margin_top = 52.0
-margin_right = 84.0
-margin_bottom = 74.0
+margin_top = 44.0
+margin_right = 72.0
+margin_bottom = 66.0
 text = "x1.0"

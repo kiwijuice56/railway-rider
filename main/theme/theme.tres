@@ -59,8 +59,7 @@ expand_margin_bottom = 2.0
 anti_aliasing = false
 
 [sub_resource type="DynamicFont" id=6]
-outline_size = 2
-outline_color = Color( 0.568627, 0.584314, 0.627451, 1 )
+outline_color = Color( 1, 0.67451, 0.25098, 1 )
 font_data = ExtResource( 1 )
 
 [resource]

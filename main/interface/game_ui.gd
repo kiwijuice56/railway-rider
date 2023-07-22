@@ -22,6 +22,6 @@ func _on_MenuButton_pressed():
 	pass # Replace with function body.
 
 func _on_values_changed() -> void:
-	get_node("%ScoreLabel").text = ("%07d" % int(GlobalState.score))
+	get_node("%ScoreLabel").text = ("%06d" % int(GlobalState.score))
 	get_node("%CoinLabel").text = ("%03d" % int(GlobalState.coins))
 	get_node("%ScoreMultLabel").text = ("%.2f" % float(GlobalState.score_mult)) + "x"
