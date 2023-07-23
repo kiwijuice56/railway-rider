@@ -47,7 +47,11 @@ func _process(delta: float) -> void:
 		for mesh in $Train/TrainModel.get_children():
 			if not mesh is MeshInstance:
 				continue
+			
 			mesh.translation += vel[mesh] * delta * 32
+			mesh.rotation_degrees.x += 256 * delta + mesh.get_index() * 16 * delta
+			mesh.rotation_degrees.z += 64 * delta + mesh.get_index() * 16 * delta
+			mesh.rotation_degrees.z += 64 * delta
 		return
 	
 	# Sync camera's y position
@@ -158,6 +162,7 @@ func reset() -> void:
 	$Train/CollisionShape.call_deferred("set", "disabled", false)
 	$AnimationPlayer.stop()
 	$AnimationPlayer.play("RESET")
+	$Train/TrainModel/AnimationPlayer.play("turning_wheels")
 	yield($AnimationPlayer, "animation_finished")
 	
 	# Reset powerups
@@ -173,6 +178,7 @@ func reset() -> void:
 	set_process(true)
 
 func death() -> void:
+	$Train/TrainModel/AnimationPlayer.stop()
 	$ExplosionStreamPlayer.playing = true
 	$Camera.shake(0.65, 60, 0.3)
 	

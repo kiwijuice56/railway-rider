@@ -54,10 +54,12 @@ visible = false
 [node name="CreditScreen" parent="." instance=ExtResource( 5 )]
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
+cam_switch_time = 0.18
 
 [node name="TitleCamera" type="Camera" parent="."]
 pause_mode = 2
 transform = Transform( 0.700473, 0.128061, -0.702095, 0, 0.983769, 0.179438, 0.713678, -0.125691, 0.689104, -4.515, 3.598, 2.878 )
+current = true
 far = 159.1
 
 [node name="Tracks" type="Spatial" parent="."]

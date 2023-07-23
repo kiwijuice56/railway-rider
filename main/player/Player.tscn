@@ -1030,6 +1030,9 @@ mesh = SubResource( 2 )
 transform = Transform( 0.40614, 0, 0.140889, 0, 0.429882, 0, -0.140889, 0, 0.40614, -0.673706, 1.15936, 0.610824 )
 mesh = SubResource( 3 )
 
+[node name="AnimationPlayer" parent="Train/TrainModel" index="7"]
+autoplay = ""
+
 [node name="AttractArea" type="Area" parent="Train"]
 transform = Transform( 1.04712, 0, 0, 0, 1.0582, 0, 0, 0, 1.3369, 0, -1.28677, 0 )
 collision_layer = 0
