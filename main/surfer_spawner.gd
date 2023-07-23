@@ -21,7 +21,6 @@ func _ready() -> void:
 
 func spawn_surfer() -> void:
 	var surfer = runners[randi() % runners.size()].instance()
-	print(surfer)
 	var farthest_track: Spatial = tracks.get_child(tracks.get_child_count() - 1)
 	farthest_track.add_child(surfer)
 	surfer.translation.y = 3

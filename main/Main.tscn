@@ -42,8 +42,10 @@ color = Color( 0, 0, 0, 0.258824 )
 [node name="TitleScreen" parent="." instance=ExtResource( 7 )]
 
 [node name="HelpScreen" parent="." instance=ExtResource( 8 )]
+visible = false
 
 [node name="CreditScreen" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 
@@ -87,5 +89,6 @@ one_shot = true
 pause_mode = 2
 
 [node name="Skyline" type="Sprite3D" parent="."]
-transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 11.2408, -139.494 )
+transform = Transform( 6, 0, 0, 0, 6, 0, 0, 0, 6, 0, 11.241, -150 )
+visible = false
 texture = ExtResource( 9 )

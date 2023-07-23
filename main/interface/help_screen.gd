@@ -2,8 +2,7 @@ class_name HelpScreen
 extends Control
 
 func _ready() -> void:
-	get_node("../UIBlocker").modulate.a = 0
-	
+	modulate.a = 0
 	get_node("%BackButton").disabled = true
 	visible = false
 	
@@ -22,7 +21,6 @@ func _on_back_pressed() -> void:
 	visible = false
 
 func enter() -> void:
-	
 	$Tween.interpolate_property(get_node("../UIBlocker"), "modulate:a", 0.0, 1.0, 0.3)
 	$Tween.interpolate_property(self, "modulate:a", 0.0, 1.0, 0.3)
 	$Tween.start()

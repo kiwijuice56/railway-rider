@@ -33,6 +33,7 @@ func _on_help_pressed() -> void:
 	
 	$Tween.start()
 	yield($Tween, "tween_completed")
+	
 	get_node("../HelpScreen").enter()
 
 func _on_credit_pressed() -> void:

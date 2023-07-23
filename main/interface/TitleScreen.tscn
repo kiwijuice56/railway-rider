@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://main/interface/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://main/interface/KGRedHands.ttf" type="DynamicFontData" id=2]
@@ -6,7 +6,6 @@
 
 [sub_resource type="DynamicFont" id=7]
 size = 48
-outline_size = 4
 outline_color = Color( 1, 0.631373, 0.156863, 1 )
 use_mipmaps = true
 use_filter = true
@@ -39,6 +38,82 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 )
 }
 
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.21, 0.789333, 1, 1 )
+border_width_bottom = 4
+border_color = Color( 0.1068, 0.441114, 0.89, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.105882, 0.439216, 0.890196, 1 )
+border_color = Color( 0.105882, 0.439216, 0.890196, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.156863, 0.658824, 1, 1 )
+border_width_bottom = 4
+border_color = Color( 0.1068, 0.441114, 0.89, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=15]
+bg_color = Color( 0.61625, 1, 0.36, 1 )
+border_width_bottom = 4
+border_color = Color( 0.1292, 0.68, 0.41378, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.129412, 0.678431, 0.415686, 1 )
+border_color = Color( 0.129412, 0.678431, 0.415686, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.315, 0.9, 0.4125, 1 )
+border_width_bottom = 4
+border_color = Color( 0.1292, 0.68, 0.41378, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
 [node name="TitleScreen" type="Control"]
 pause_mode = 2
 anchor_right = 1.0
@@ -58,6 +133,9 @@ margin_bottom = 32.0
 rect_min_size = Vector2( 319.902, 32 )
 rect_pivot_offset = Vector2( 320, 32 )
 size_flags_horizontal = 3
+custom_colors/font_color_shadow = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_constants/shadow_offset_x = -1
+custom_constants/shadow_offset_y = 3
 custom_fonts/font = SubResource( 7 )
 text = "Railway Rider"
 align = 1
@@ -108,6 +186,10 @@ custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 12 )
+custom_styles/pressed = SubResource( 13 )
+custom_styles/disabled = SubResource( 10 )
+custom_styles/normal = SubResource( 10 )
 enabled_focus_mode = 0
 text = "Help"
 
@@ -125,6 +207,10 @@ custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/hover = SubResource( 15 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 11 )
 enabled_focus_mode = 0
 text = "Credits"
 
@@ -137,6 +223,10 @@ anchor_bottom = 1.0
 margin_left = -117.5
 margin_top = -60.0
 margin_right = 117.5
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_constants/shadow_offset_x = 0
+custom_constants/shadow_offset_y = 2
 text = "Your high score: 0000000
 Total coins: 000"
 align = 1

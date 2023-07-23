@@ -51,8 +51,7 @@ corner_radius_top_left = 2
 corner_radius_top_right = 2
 
 [sub_resource type="DynamicFont" id=6]
-outline_size = 2
-outline_color = Color( 0.568627, 0.584314, 0.627451, 1 )
+outline_color = Color( 0.541176, 0.6, 0.72549, 1 )
 font_data = ExtResource( 1 )
 
 [resource]
