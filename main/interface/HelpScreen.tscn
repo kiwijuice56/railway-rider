@@ -94,7 +94,7 @@ text = "Controls:
 A/Left Arrow to move left
 D/Right Arrow to move right
 W/Space/Up Arrow to jump
-P/Esc to pause and unpause
+P to pause and unpause
 "
 align = 1
 

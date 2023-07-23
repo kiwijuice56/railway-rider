@@ -107,12 +107,12 @@ custom_constants/margin_bottom = 16
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 margin_left = 192.0
-margin_top = 80.0
+margin_top = 43.0
 margin_right = 448.0
-margin_bottom = 280.0
+margin_bottom = 317.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-custom_constants/separation = 15
+custom_constants/separation = 19
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 256.0
@@ -125,10 +125,20 @@ Siddharth R
 Connor C"
 align = 1
 
-[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 112.0
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 116.0
 margin_right = 256.0
-margin_bottom = 159.0
+margin_bottom = 163.0
+custom_colors/font_color_shadow = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_constants/shadow_offset_y = 2
+text = "Music by:
+Kevin M (incompetech.com)"
+align = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 182.0
+margin_right = 256.0
+margin_bottom = 229.0
 rect_min_size = Vector2( 256, 0 )
 custom_colors/font_color_shadow = Color( 0.501961, 0.501961, 0.501961, 1 )
 custom_constants/shadow_offset_y = 2
@@ -139,9 +149,9 @@ autowrap = true
 [node name="BackButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true
 margin_left = 78.0
-margin_top = 174.0
+margin_top = 248.0
 margin_right = 178.0
-margin_bottom = 200.0
+margin_bottom = 274.0
 rect_min_size = Vector2( 100, 0 )
 size_flags_horizontal = 6
 size_flags_vertical = 4

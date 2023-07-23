@@ -116,5 +116,5 @@ margin_top = -23.5
 margin_right = 112.5
 margin_bottom = 23.5
 text = "Paused
-(press P/Esc to unpause)"
+(press P to unpause)"
 align = 1
