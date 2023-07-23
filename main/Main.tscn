@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/player/Player.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://main/interface/TitleScreen.tscn" type="PackedScene" id=7]
 [ext_resource path="res://main/interface/HelpScreen.tscn" type="PackedScene" id=8]
 [ext_resource path="res://main/track/resources/skyline.png" type="Texture" id=9]
+[ext_resource path="res://main/music/private_eye.mp3" type="AudioStream" id=10]
 
 [sub_resource type="SpatialMaterial" id=3]
 params_diffuse_mode = 4
@@ -27,6 +28,12 @@ render_distance = 9
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 pause_mode = 2
 stream = ExtResource( 3 )
+volume_db = -80.0
+autoplay = true
+
+[node name="MusicPlayer2" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 10 )
 volume_db = -80.0
 autoplay = true
 

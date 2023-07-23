@@ -89,8 +89,10 @@ func load_scenes(path: String, array: Array) -> void:
 func play() -> void:
 	$Tween.interpolate_property($TitleCamera, "transform", null, $Player/Camera.transform, 1.0 if $TitleCamera.current else 0.2,
 	Tween.TRANS_QUAD, Tween.EASE_OUT)
+	$Tween.interpolate_property($MusicPlayer, "volume_db", null, -80, 0.5)
 	$Tween.start()
-	yield($Tween, "tween_completed")
+	
+	yield($Tween, "tween_all_completed")
 	$TitleCamera.current = false
 	$Player/Camera.current = true
 	
@@ -100,8 +102,9 @@ func play() -> void:
 	$Tween.interpolate_property($Skyline, "modulate", 
 	  Color(1, 1, 1, 0), Color(1, 1, 1, .3), 3.0, 
 	  Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.interpolate_property($MusicPlayer2, "volume_db", null, -80 if GlobalState.music_mute else -14, 0.5)
 	$Tween.start()
-	
+	$GameUI.can_pause = true
 
 # Reset game to initial state
 func reset() -> void:
@@ -143,6 +146,7 @@ func reset() -> void:
 	
 
 func death() -> void:
+	$GameUI.can_pause = false
 	GlobalState.total_coins += GlobalState.coins
 	GlobalState.save()
 	
@@ -150,10 +154,13 @@ func death() -> void:
 	$Player.death()
 	yield($Player, "died")
 	$Tween.interpolate_property($Player/Camera, "fov", 70, 1, 0.8)
+	$Tween.interpolate_property($MusicPlayer2, "volume_db", null, -80, 0.5)
 	$Tween.start()
-	yield($Tween, "tween_completed")
+	yield($Tween, "tween_all_completed")
 	yield(reset(), "completed")
+	$Tween.interpolate_property($MusicPlayer, "volume_db", null, -80 if GlobalState.music_mute else -14, 0.8)
 	$Tween.interpolate_property($Player/Camera, "fov", 1, 70, 0.8)
+	$Tween.start()
 	get_tree().paused = true
 	$TitleScreen.enter()
 
