@@ -1,8 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://main/interface/credit_screen.gd" type="Script" id=1]
 [ext_resource path="res://main/collectable/frog/FrogModel.tscn" type="PackedScene" id=2]
 [ext_resource path="res://main/theme/theme.tres" type="Theme" id=3]
+[ext_resource path="res://main/surfer/runner/GuyDangerous/GuyDangerousModel.tscn" type="PackedScene" id=4]
+[ext_resource path="res://main/surfer/runner/minion/MinionModel.tscn" type="PackedScene" id=5]
 
 [sub_resource type="StyleBoxFlat" id=9]
 bg_color = Color( 1, 0.490196, 0.658824, 1 )
@@ -67,6 +69,68 @@ tracks/0/keys = {
 }
 
 [sub_resource type="Animation" id=13]
+resource_name = "wooo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -18, 0, 0 ), Vector3( -18, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "wooo"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -18, 0, 0 ), Vector3( -18, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=16]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[sub_resource type="Animation" id=17]
 resource_name = "wooo"
 loop = true
 tracks/0/type = "value"
@@ -199,6 +263,92 @@ custom_colors/font_color_shadow = Color( 0.501961, 0.501961, 0.501961, 1 )
 custom_constants/shadow_offset_y = 2
 text = "Froggy
  (wildcard)"
+align = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 489.0
+margin_top = 229.0
+margin_right = 624.0
+margin_bottom = 344.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="ViewportContainer" type="ViewportContainer" parent="MarginContainer/VBoxContainer3"]
+margin_right = 135.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="MarginContainer/VBoxContainer3/ViewportContainer"]
+size = Vector2( 135, 64 )
+own_world = true
+world = SubResource( 11 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="MarginContainer/VBoxContainer3/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.78283, 4.10354 )
+
+[node name="GuyDangerousModel" parent="MarginContainer/VBoxContainer3/ViewportContainer/Viewport" instance=ExtResource( 4 )]
+transform = Transform( 0.579218, 0, -2.43198, 0, 2.5, 0, 2.43198, 0, 0.579218, 0, 0, 0 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MarginContainer/VBoxContainer3/ViewportContainer/Viewport/GuyDangerousModel"]
+autoplay = "wooo"
+anims/RESET = SubResource( 14 )
+anims/wooo = SubResource( 15 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer3"]
+margin_top = 68.0
+margin_right = 135.0
+margin_bottom = 115.0
+custom_colors/font_color_shadow = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_constants/shadow_offset_y = 2
+text = "Guy Dangerous
+(Temple Run)"
+align = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 489.0
+margin_top = 229.0
+margin_right = 624.0
+margin_bottom = 344.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="ViewportContainer" type="ViewportContainer" parent="MarginContainer/VBoxContainer4"]
+margin_right = 135.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
+stretch = true
+
+[node name="Viewport" type="Viewport" parent="MarginContainer/VBoxContainer4/ViewportContainer"]
+size = Vector2( 135, 64 )
+own_world = true
+world = SubResource( 11 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="Camera" type="Camera" parent="MarginContainer/VBoxContainer4/ViewportContainer/Viewport"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.368109, 1.49898 )
+
+[node name="MinionModel" parent="MarginContainer/VBoxContainer4/ViewportContainer/Viewport" instance=ExtResource( 5 )]
+transform = Transform( 0.361946, 0, -0.932199, 0, 1, 0, 0.932199, 0, 0.361946, 0, 0, 0 )
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="MarginContainer/VBoxContainer4/ViewportContainer/Viewport/MinionModel"]
+autoplay = "wooo"
+anims/RESET = SubResource( 16 )
+anims/wooo = SubResource( 17 )
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer4"]
+margin_top = 68.0
+margin_right = 135.0
+margin_bottom = 115.0
+custom_colors/font_color_shadow = Color( 0.501961, 0.501961, 0.501961, 1 )
+custom_constants/shadow_offset_y = 2
+text = "Guy Dangerous
+(Temple Run)"
 align = 1
 
 [node name="Tween" type="Tween" parent="."]
