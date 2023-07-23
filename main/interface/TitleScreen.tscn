@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://main/interface/title_screen.gd" type="Script" id=1]
 [ext_resource path="res://main/interface/KGRedHands.ttf" type="DynamicFontData" id=2]
@@ -37,6 +37,19 @@ tracks/0/keys = {
 "points": PoolRealArray( -4, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0 ),
 "times": PoolRealArray( 0, 0.5, 1 )
 }
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.729412, 0.211765, 1 )
+border_width_bottom = 4
+border_color = Color( 0.9, 0.46935, 0.117, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
 
 [sub_resource type="StyleBoxFlat" id=12]
 bg_color = Color( 0.21, 0.789333, 1, 1 )
@@ -164,7 +177,6 @@ unique_name_in_owner = true
 margin_right = 100.0
 margin_bottom = 26.0
 rect_min_size = Vector2( 100, 0 )
-focus_mode = 0
 size_flags_horizontal = 6
 size_flags_vertical = 4
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
@@ -172,7 +184,7 @@ custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
-enabled_focus_mode = 0
+custom_styles/focus = SubResource( 4 )
 text = "Play"
 
 [node name="HelpButton" type="Button" parent="VBoxContainer"]
@@ -180,7 +192,6 @@ unique_name_in_owner = true
 margin_top = 35.0
 margin_right = 100.0
 margin_bottom = 61.0
-focus_mode = 0
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
 custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
@@ -188,9 +199,9 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 12 )
 custom_styles/pressed = SubResource( 13 )
+custom_styles/focus = SubResource( 12 )
 custom_styles/disabled = SubResource( 10 )
 custom_styles/normal = SubResource( 10 )
-enabled_focus_mode = 0
 text = "Help"
 
 [node name="CreditButton" type="Button" parent="VBoxContainer"]
@@ -199,7 +210,6 @@ margin_top = 70.0
 margin_right = 100.0
 margin_bottom = 96.0
 rect_min_size = Vector2( 100, 0 )
-focus_mode = 0
 size_flags_horizontal = 6
 size_flags_vertical = 2
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
@@ -209,9 +219,9 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 15 )
 custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
 custom_styles/disabled = SubResource( 11 )
 custom_styles/normal = SubResource( 11 )
-enabled_focus_mode = 0
 text = "Credits"
 
 [node name="HighScoreLabel" type="Label" parent="."]

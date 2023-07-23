@@ -58,3 +58,5 @@ func enter() -> void:
 	get_node("%PlayButton").disabled = false
 	get_node("%HelpButton").disabled = false
 	get_node("%CreditButton").disabled = false
+	
+	get_node("%PlayButton").grab_focus()

@@ -104,7 +104,6 @@ margin_top = 227.0
 margin_right = 289.0
 margin_bottom = 253.0
 rect_min_size = Vector2( 100, 0 )
-focus_mode = 0
 size_flags_horizontal = 6
 size_flags_vertical = 4
 custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
@@ -114,9 +113,9 @@ custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
 custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
 custom_styles/hover = SubResource( 9 )
 custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 7 )
-enabled_focus_mode = 0
 text = "Go back"
 
 [node name="Tween" type="Tween" parent="."]

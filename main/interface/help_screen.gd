@@ -28,4 +28,4 @@ func enter() -> void:
 	yield($Tween, "tween_completed")
 	
 	get_node("%BackButton").disabled = false
-	
+	get_node("%BackButton").grab_focus()
