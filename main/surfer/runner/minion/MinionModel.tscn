@@ -12,3 +12,6 @@ visible = false
 
 [node name="mc_001_0_4_mesh4" parent="Skeleton" index="1"]
 visible = false
+
+[node name="Camera" type="Camera" parent="." index="2"]
+transform = Transform( 1, 0, 0, 0, 0.930571, 0.366111, 0, -0.366111, 0.930571, 0, 1.3969, 3.72652 )
