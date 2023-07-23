@@ -4,7 +4,6 @@
 [ext_resource path="res://main/track/prop/TreeModel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://main/track/prop/TreeModel2.tscn" type="PackedScene" id=5]
 
-
 [node name="Basic" type="Spatial"]
 
 [node name="WallModel" parent="." instance=ExtResource( 2 )]

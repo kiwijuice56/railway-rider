@@ -83,7 +83,6 @@ func load_scenes(path: String, array: Array) -> void:
 		file_name = dir.get_next()
 
 func play() -> void:
-	
 	$Tween.interpolate_property($TitleCamera, "transform", null, $Player/Camera.transform, 1.0 if $TitleCamera.current else 0.2,
 	Tween.TRANS_QUAD, Tween.EASE_OUT)
 	$Tween.start()
@@ -93,10 +92,16 @@ func play() -> void:
 	
 	get_tree().paused = false
 	$SurferSpawner/Timer.start()
+	$Skyline.modulate=Color(1, 1, 1, 0)
+	$Tween.interpolate_property($Skyline, "modulate", 
+	  Color(1, 1, 1, 0), Color(1, 1, 1, .3), 3.0, 
+	  Tween.TRANS_LINEAR, Tween.EASE_IN)
+	$Tween.start()
+	
 
 # Reset game to initial state
 func reset() -> void:
-	
+	$Skyline.modulate=Color(1, 1, 1, 0)
 	$SurferSpawner/Timer.stop()
 	paused = false
 	GlobalState.score = 0
