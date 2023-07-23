@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/theme/theme.tres" type="Theme" id=1]
 [ext_resource path="res://main/interface/help_screen.gd" type="Script" id=2]
@@ -31,6 +31,19 @@ anti_aliasing = false
 bg_color = Color( 0.988235, 0.360784, 0.745098, 1 )
 border_width_bottom = 4
 border_color = Color( 0.768627, 0.254902, 0.639216, 1 )
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+corner_detail = 20
+expand_margin_top = 2.0
+expand_margin_bottom = 2.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 1, 0.729412, 0.211765, 1 )
+border_width_bottom = 4
+border_color = Color( 0.9, 0.46935, 0.117, 1 )
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
@@ -80,7 +93,7 @@ custom_constants/shadow_offset_y = 2
 text = "Controls:
 A/Left Arrow to move left
 D/Right Arrow to move right
-Space/Up Arrow to jump
+W/Space/Up Arrow to jump
 "
 align = 1
 
@@ -117,5 +130,41 @@ custom_styles/focus = SubResource( 9 )
 custom_styles/disabled = SubResource( 7 )
 custom_styles/normal = SubResource( 7 )
 text = "Go back"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 474.0
+margin_top = 282.0
+margin_right = 624.0
+margin_bottom = 344.0
+size_flags_horizontal = 8
+size_flags_vertical = 8
+custom_constants/separation = 10
+
+[node name="MusicButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+unique_name_in_owner = true
+margin_right = 150.0
+margin_bottom = 26.0
+rect_min_size = Vector2( 150, 0 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/focus = SubResource( 4 )
+text = "Unmute music"
+
+[node name="SfxButton" type="Button" parent="MarginContainer/VBoxContainer2"]
+unique_name_in_owner = true
+margin_top = 36.0
+margin_right = 150.0
+margin_bottom = 62.0
+rect_min_size = Vector2( 150, 0 )
+custom_colors/font_color_disabled = Color( 1, 1, 1, 1 )
+custom_colors/font_color_focus = Color( 1, 1, 1, 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 1, 1, 1, 1 )
+custom_colors/font_color_pressed = Color( 1, 1, 1, 1 )
+custom_styles/focus = SubResource( 4 )
+text = "Toggle sfx"
 
 [node name="Tween" type="Tween" parent="."]

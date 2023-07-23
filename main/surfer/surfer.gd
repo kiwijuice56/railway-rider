@@ -25,6 +25,15 @@ func _ready() -> void:
 	
 # warning-ignore:return_value_discarded
 	$HitArea.connect("body_entered", self, "_on_player_hit")
+	GlobalState.connect("audio_changed", self, "_on_audio_changed")
+	_on_audio_changed()
+
+func _on_audio_changed() -> void:
+	$SwooshPlayer.volume_db = -80 if GlobalState.sfx_mute else -12
+# warning-ignore:incompatible_ternary
+	$YellPlayer.volume_db = -80 if GlobalState.sfx_mute else -0.062
+# warning-ignore:incompatible_ternary
+	$ImpactPlayer.volume_db = -80 if GlobalState.sfx_mute else -5.111
 
 func _physics_process(delta: float) -> void:
 	if dead:

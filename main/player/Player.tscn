@@ -974,7 +974,7 @@ tracks/3/keys = {
 [node name="Player" type="Spatial"]
 script = ExtResource( 1 )
 lane_offset = 3.0
-switch_time = 0.09
+switch_time = 0.07
 
 [node name="Train" parent="." instance=ExtResource( 2 )]
 transform = Transform( 0.955, 0, 0, 0, 0.945, 0, 0, 0, 0.748, 0, 1.216, 0 )
@@ -1002,7 +1002,7 @@ transform = Transform( 0.792053, 0, 0, 0, 0.777978, 0, 0, 0, 0.802703, 0, 0, 0 )
 
 [node name="Magnet" type="Spatial" parent="Train/TrainModel/body" index="0"]
 unique_name_in_owner = true
-transform = Transform( -1, 2.12813e-07, 6.18172e-08, -1.0677e-07, -0.707107, 0.707106, 1.94193e-07, 0.707106, 0.707107, 0, 1.6065, -1.83555 )
+transform = Transform( -1, 2.12813e-07, 6.18175e-08, -1.0677e-07, -0.707107, 0.707106, 1.94193e-07, 0.707106, 0.707107, 0, 1.6065, -1.83555 )
 
 [node name="MagnetModel" type="Spatial" parent="Train/TrainModel/body/Magnet"]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )

@@ -30,7 +30,8 @@ func _ready() -> void:
 	load_scenes(TRACK_BG_PATH, bg_tracks)
 	
 	reset()
-	
+	GlobalState.connect("audio_changed", self, "_on_audio_changed")
+	_on_audio_changed()
 
 func _physics_process(_delta: float) -> void:
 	if paused:
@@ -69,6 +70,9 @@ func _physics_process(_delta: float) -> void:
 			new_child.translation.y = -100
 			parent.add_child(new_child)
 			new_child.translation = Vector3(0, 0, offset + TRACK_LENGTH * (1 - render_distance))
+
+func _on_audio_changed() -> void:
+	$MusicPlayer.volume_db = -80 if GlobalState.music_mute else -14
 
 func load_scenes(path: String, array: Array) -> void:
 	var dir: Directory = Directory.new()
@@ -152,3 +156,4 @@ func death() -> void:
 	$Tween.interpolate_property($Player/Camera, "fov", 1, 70, 0.8)
 	get_tree().paused = true
 	$TitleScreen.enter()
+
