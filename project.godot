@@ -136,7 +136,7 @@ _global_script_class_icons={
 
 config/name="railway-rider"
 run/main_scene="res://main/Main.tscn"
-config/icon="res://icon.png"
+config/icon="res://train_icon.png"
 
 [autoload]
 
