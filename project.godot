@@ -39,14 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://main/interface/game_ui.gd"
 }, {
-<<<<<<< HEAD
 "base": "Control",
 "class": "HelpScreen",
 "language": "GDScript",
 "path": "res://main/interface/help_screen.gd"
 }, {
-=======
->>>>>>> 4c90233d0cfe3a4fba77c48f0936ddfd5138b9af
 "base": "Collectable",
 "class": "Magnet",
 "language": "GDScript",
