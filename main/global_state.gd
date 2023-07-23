@@ -20,6 +20,7 @@ func _ready() -> void:
 func save() -> void:
 	var save_file: SaveFile = SaveFile.new()
 	save_file.data = {"total_coins": total_coins, "high_score": high_score}
+# warning-ignore:return_value_discarded
 	ResourceSaver.save("user://save.tres", save_file)
 
 func set_score(val: float) -> void:
