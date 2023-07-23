@@ -44,7 +44,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-color = Color( 0, 0, 0, 0.258824 )
+color = Color( 0, 0, 0, 0.278431 )
 
 [node name="TitleScreen" parent="." instance=ExtResource( 7 )]
 
@@ -58,7 +58,6 @@ visible = false
 [node name="TitleCamera" type="Camera" parent="."]
 pause_mode = 2
 transform = Transform( 0.700473, 0.128061, -0.702095, 0, 0.983769, 0.179438, 0.713678, -0.125691, 0.689104, -4.515, 3.598, 2.878 )
-current = true
 far = 159.1
 
 [node name="Tracks" type="Spatial" parent="."]

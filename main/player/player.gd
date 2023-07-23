@@ -31,6 +31,7 @@ func _ready() -> void:
 # warning-ignore:return_value_discarded
 	$Train/AttractArea.connect("area_entered", self, "_on_coin_entered")
 	GlobalState.connect("audio_changed", self, "_on_audio_changed")
+	_on_audio_changed()
 
 func _on_audio_changed() -> void:
 	$SwooshPlayer.volume_db = -80 if GlobalState.sfx_mute else -12

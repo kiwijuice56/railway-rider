@@ -55,6 +55,7 @@ func _physics_process(delta: float) -> void:
 func _on_player_hit(body: PhysicsBody) -> void:
 	body.get_parent().kill()
 	GlobalState.score_mult += score_mult
+	_on_audio_changed()
 	$YellPlayer.pitch_scale = rand_range(0.7, 1.3)
 	$YellPlayer.play()
 	$ImpactPlayer.pitch_scale = rand_range(0.7, 1.3)
@@ -65,6 +66,7 @@ func jump() -> void:
 	just_jumped = true
 	var anim: AnimationPlayer = $SurferModel.get_child(0).get_node("AnimationPlayer")
 	
+	_on_audio_changed()
 	$SwooshPlayer.play()
 	if $SurferModel.get_child(0).has_node("Jump"):
 		anim.stop(false)
@@ -72,6 +74,7 @@ func jump() -> void:
 	velocity += JUMP
 
 func switch_lane() -> void:
+	_on_audio_changed()
 	$SwooshPlayer.play()
 	
 	$Tween.interpolate_property(self, "translation:x", null, 

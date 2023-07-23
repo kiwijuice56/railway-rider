@@ -20,8 +20,8 @@ func _ready() -> void:
 		total_coins = save.data.total_coins
 		high_score = save.data.high_score
 		
-		sfx_mute = save.data.sfx_mute
-		music_mute = save.data.music_mute
+		self.sfx_mute = save.data.sfx_mute
+		self.music_mute = save.data.music_mute
 
 func save() -> void:
 	var save_file: SaveFile = SaveFile.new()
