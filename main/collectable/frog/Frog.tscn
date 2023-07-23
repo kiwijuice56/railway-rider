@@ -308,6 +308,7 @@ tracks/0/keys = {
 
 [node name="Frog" instance=ExtResource( 1 )]
 script = ExtResource( 3 )
+volume = -12.404
 
 [node name="FrogModel" parent="." index="0" instance=ExtResource( 2 )]
 transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.748968, 0 )

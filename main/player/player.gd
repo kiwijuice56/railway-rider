@@ -30,6 +30,15 @@ func _ready() -> void:
 	$MagnetBoostTimer.connect("timeout", self, "_on_magnet_boost_timeout")
 # warning-ignore:return_value_discarded
 	$Train/AttractArea.connect("area_entered", self, "_on_coin_entered")
+	GlobalState.connect("audio_changed", self, "_on_audio_changed")
+
+func _on_audio_changed() -> void:
+	$SwooshPlayer.volume_db = -80 if GlobalState.sfx_mute else -12
+	$CreakPlayer.volume_db = -80 if GlobalState.sfx_mute else -16
+	$ImpactPlayer.volume_db = -80 if GlobalState.sfx_mute else -9
+	$CrashPlayer.volume_db = -80 if GlobalState.sfx_mute else -12
+	$TrainPlayer.volume_db = -80 if GlobalState.sfx_mute else -16
+	$ExplosionStreamPlayer.volume_db = -80 if GlobalState.sfx_mute else -13
 
 func _process(delta: float) -> void:
 	# On death, shoot out train parts

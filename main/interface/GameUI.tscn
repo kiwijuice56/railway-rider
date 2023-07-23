@@ -15,6 +15,7 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
 [node name="GameUI" type="Control"]
+pause_mode = 2
 anchor_right = 1.0
 anchor_bottom = 1.0
 theme = ExtResource( 14 )
@@ -95,3 +96,25 @@ margin_top = 44.0
 margin_right = 72.0
 margin_bottom = 66.0
 text = "x1.0"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Pause" type="ColorRect" parent="CanvasLayer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+color = Color( 0, 0, 0, 0.309804 )
+
+[node name="Label" type="Label" parent="CanvasLayer/Pause"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -112.5
+margin_top = -23.5
+margin_right = 112.5
+margin_bottom = 23.5
+text = "Paused
+(press P/Esc to unpause)"
+align = 1
